@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <!----------------------CSS SIDE DASHBOARD LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/edit_managestudent.css">
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+
+    </head>
+    <body>  
+        <!--====================Side Nav bar starting======================-->
+        {{> admin_navbar}}
+        <!--===========Nav bar ending ===========-->
+        <!--setup navigation bar-->
+        <section class="dashboard">
+            <div class="top">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="setupbar">
+                <div class="thingsbar">
+                    <div class="set-link">
+                        <i class="fa-brands fa-windows"></i>
+                        <a class="navtext" href=""><span>Back to Home</span></a>
+                    </div>
+                    <div class="set-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                    </div>
+                    <div class="user-img">
+                        <span class="userimg-design">
+                            <i class="fa-solid fa-user"></i>
+                        </span>         
+                    </div>
+                </div>
+            </div>
+            <!--setup navigation bar end-->
+
+            <div class="manage">
+                <div class="title">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <span class="text">Edit Coordinator Account</span>
+                </div>
+            </div>
+
+            {{#if msg}}
+                <span class="{{msg_type}}">{{msg}}</span>
+            {{/if}}
+
+            {{#each result}}
+            <form  action="/auth/savechanges_editcoordinator/{{this.ID}}" method="POST">
+                <div class="top-form">
+                    <div class="fields">
+                        <div class="input-container">
+                            <label>Fullname: *</label>
+                            <input type="text" name="fullname" placeholder="Enter Your Fullname" value="{{this.NAME}}" required>
+                        </div>
+                        <div class="input-container">
+                            <label>Id: *</label>
+                            <input type="text" name="regno" placeholder="Enter Your Regno" value="{{this.REGNO}}" required>
+                        </div>
+                        <div class="input-container">
+                            <label>Email: *</label>
+                            <input type="email" name="email" placeholder="Enter Your Email" value="{{this.EMAIL}}" required>
+                        </div>
+                        <div class="input-container">
+                            <label>Phonenumber: *</label>
+                            <input type="text" name="phone" placeholder="Enter Your PhoneNumber" value="{{this.PHONE_NUMBER}}" required>
+                        </div>
+                        <div class="radio-container">
+                                <label>Gender: *</label>
+                                <input type="radio" name="gender" value="male" id="m" required><label>Male</label>
+                                <input type="radio" name="gender" value="female" id="f" ><label>Female</label>                             
+                        </div>
+                        <div class="input-container">
+                                <label>Date of Birth: *</label> 
+                                <input type="date" name="date" value="{{this.DATEOFBIRTH}}" required>
+                            
+                        </div>
+                        <div class="select-container">
+                            <label>Select Your Department</label>
+                            <select name="dep" id="dep-field"required>
+                                <option selected disabled hidden><label>Choose your dep</label></option>
+                                <option name="CSE"value="1"><label>CSE</label></option>
+                                <option name="ECE"value="3"><label>ECE</label></option>
+                                <option name="IT"value="2"><label>IT</label></option>
+                                <option name="BIO"value="4"><label>BIO</label></option>
+                                <option name="MECH"value="5"><label>MECH</label></option>  
+                                <option name="CIVIL"value="6"><label>CIVIL</label></option>  
+                            </select>
+                        </div>
+
+                        <div class="address-field">
+                            <label>Address: *</label>
+                            <textarea name="textarea" rows="3" required>{{this.ADDRESS}}</textarea>
+                        </div>
+                        
+                    </div>
+                    <div class="buttons">
+                        <div class="button-field">
+                            <button type="submit">Save Changes</button>
+                        </div>
+                         <div class="back-field">
+                            <a class="back" href="/manage_coordinator"> <button type="button">Back</button> </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            
+                
+            </form>    
+            {{/each}}
+
+        </section>
+    </body>
+    <script>
+        document.getElementById("dep-field").value = "{{result.[0].DEPARTMENT}}";
+
+        if("{{result.[0].GENDER}}" === "male"){
+            document.getElementById("m").checked = true;
+        }
+        else{
+            document.getElementById("f").checked = true;
+        } 
+
+    </script>
+    <script src="/darkmode.js"></script>
+
+</html>

@@ -1,0 +1,227 @@
+.top-notch{
+   
+    padding: 0px 0px 0px 20px;
+    width: 730px;
+    margin: 110px auto;
+    background-color: white;
+    border: 2px solid white;
+    height: 700px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+.top-notch h2{
+  font-size: 20px;
+  font-family: sans-serif,Arial, Helvetica, sans-serif;
+  margin-left: 200px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 5px;
+  color: #151515fa;
+}
+.top-notch .middle-notch{
+    
+    padding: 25px 0 30px 25px;  /*25px left */
+    height: 700px;
+  
+    
+}
+.top-notch form{
+    position: absolute;
+    height: 500px;
+    box-sizing: border-box;
+    padding: 50px 10px 0 80px;
+ 
+}
+form .input-field input{
+    height: 35px;
+    width: 300px;
+    padding: 0 10px;
+    border-radius: 3px;
+    border: 1px solid silver;
+    opacity: 0.8;
+    font-size: 17px;
+    outline: none;
+    margin-left: 30px;
+    color: rgb(18, 16, 16);
+}
+form .input-field input:focus{
+    border: 1.5px solid rgb(47, 99, 255); 
+    background-color: white;
+}
+.input-field{
+    margin-top: 20px;
+    padding: 10px;
+
+}
+.fa-user,.fa-lock{
+    position: absolute;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin: 10px 0 0 -355px;
+}
+form input[type="submit"]{
+
+    margin-top: 40px;
+    margin-bottom: 30px;
+    width: 150px;
+    height: 48px;
+    cursor: pointer;
+    line-height: 25px;
+    background-color:royalblue;  /* #3b5998*/
+    color: rgba(255, 255, 255, 0.893);
+    border-radius: 3px;
+    outline: #4a4a4a;
+    
+}
+form input[type="submit"]:hover{
+    background-color: rgb(43, 95, 250);
+}
+.field-button{
+    outline: none;
+    margin-left: 40px;
+    height: 60px;
+    width: 180px;
+    margin-bottom: 60px;
+}
+.t-title{
+    margin-left: 30px;
+    line-height: 33px;
+    color: #141414f1;
+    font-weight: 549.9;
+  
+}
+.text{
+    color: rgb(56, 105, 252);
+    margin-left: 35px;
+    padding: 0px 5px;
+}
+.sign-text label{
+  color: #141414f1;
+  margin-left: 35px;
+  padding: 0px 5px;
+}
+.text:hover{
+   text-decoration: none;
+}
+.sign-text a{
+    color:rgb(56, 105, 252);
+}
+.sign-text a:hover{
+    text-decoration: none;
+}
+#access{
+    color: royalblue;
+    width: 30px;
+    height: 20px;
+}
+#access:hover{
+    cursor: pointer;
+}
+.error{
+    margin-top: 40px;
+    margin-bottom: 0px;
+    color: red;
+    font-size: 17px;
+    margin-left: 120px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/*body .center{
+  font-family: sans-serif;
+  margin-top: 50px;
+  margin-left: 8%;
+  margin-right: 8%;
+  width: 80% ;
+  padding: 50px 60px;
+  background-color: aqua;
+}
+.center .form1{
+   
+    background-color: rgb(176, 138, 138);
+    display: flex;
+    width: 100%; 
+    padding: 50px 0;
+   
+}
+.center .form-login{
+    background-color: rgb(162, 162, 184);
+    width: 100%;
+    height: 700px;
+
+}
+.form1 .input-field{
+    height: 50px;
+    width: 270px;
+    margin-top: 30px;
+    padding: 15px 0px;
+    margin-left:430px
+}
+.input-field input{
+    height: 35px;
+    width: 270px;
+    padding:0 10px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(155, 85, 85);
+    border-top: 2px solid transparent;
+    font-size: 16px;
+   
+}
+ .input-field input:focus ~ i{
+    background-color: rgb(255, 255, 255) ; 
+}
+ #access{
+ margin-left: 695px;
+ transform: translateY(-65px);
+ color: royalblue;
+ cursor: pointer;
+
+ }
+ .input-field i.showhidepw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+.input-field i{
+   
+    margin-left: -315px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+
+}
+
+.input-field-button input{
+ padding: 11px  50px 14px 50px;
+ margin-left: 35%;
+ font-size: 13px;
+ font-family: sans-serif;
+ 
+}
+.input-field-button{
+    padding: 35px 0 15px 0;
+    
+}
+.form1 .checkbox-text{
+
+ margin-left: 35%;
+ 
+}
+.form-login h3{
+    margin-left: 500px;
+}
+.logout-group{
+ padding-top: 10px;
+ margin-left: 35%;
+}
+.form1 .checkbox-text .text{
+    color:rgb(4, 5, 5);
+}
+
+*/

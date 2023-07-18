@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+
+        <!----------------------COORDINATOR CSS LINKING ONLY DASHBOARD DESIGN MAIN------------------->
+        <link rel="stylesheet" type ="text/css" href="/css/coordinator_sidedash.css">
+
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/coordinator_editstudent.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+
+    </head>
+    <body>
+        <!-- coordinator side navbar starting-->
+        {{> co_navbar}}
+
+        <!-- coordinator side navbar ending-->
+
+        <!--setup navigation bar starting-->
+        <section class="dashboard">
+            <div class="top">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="setupbar">
+                <div class="thingsbar">
+                    <div class="set-link">
+                        <i class="fa-brands fa-windows"></i>
+                        <a class="navtext" href=""><span>Back to Home</span></a>
+                    </div>
+                    <div class="set-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a class="navtext"href="/auth/coordinator_logout"><span>Logout</span></a>
+                    </div>
+                    <div class="user-img">
+                        <span class="userimg-design">
+                            <i class="fa-solid fa-user"></i>
+                        </span>   
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!--setup navigation bar end-->
+            <!-- title heading start-->
+            <div class="manage">
+                <div class="title">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <span class="text">Edit Student</span>
+                </div>
+            </div>  
+
+            <!-- title heading end-->
+
+            {{#if msg}}
+                <span class="{{msg_type}}">{{msg}}</span>
+            {{/if}}
+
+            <!-- form starting first-->
+            <!-- VALUE ATTRIBUTE USED TO SET BACK GIVEN DETAILS -->
+            <!-- for each loop iterate to set value back-->
+            {{#each result}}
+            <form  action="/auth/student_savechanges/{{this.ID}}" method="POST">
+                <div class="top-form">
+                    <div class="fields">
+                        <div class="input-container">
+                            <label>Fullname: *</label>
+                            <input type="text" name="fullname" placeholder="Enter Your name" value="{{this.NAME}}" required>
+                        </div>
+                        <div class="input-container">
+                            <label>Regno: *</label>
+                            <input type="text" name="regno" placeholder="Enter Your Regno" value="{{this.REGNO}}"required>
+                        </div>
+                        <div class="input-container">
+                            <label>Email: *</label>
+                            <input type="email" name="email" placeholder="Enter Your Email" value="{{this.EMAIL}}"required>
+                        </div>
+                        <div class="input-container">
+                            <label>Phone Number: *</label>
+                            <input type="text" name="phone" placeholder="Enter Phone number" value="{{this.PHONE_NUMBER}}" required>
+                        </div>
+                        <div class="radio-container">
+                                <label>Gender: *</label>
+                                <input type="radio" name="gender" value="male" id="m"required><label>Male</label>
+                                <input type="radio" name="gender" value="female" id="f" ><label>Female</label>                             
+                        </div>
+                        <div class="input-container">
+                                <label>Date of Birth: *</label> 
+                                <input type="date" name="date" value="{{this.DATEOFBIRTH}}" required>
+                            
+                        </div>
+                        <div class="select-container">
+                            <label>Select Your Department</label>
+                            <select id="default" name="dep" required>
+                                {{!-- <option selected disabled hidden><label>Choose your dep</label></option> --}}
+                                <option name="CSE"value="1"><label>CSE</label></option>
+                                <option name="ECE"value="3"><label>ECE</label></option>
+                                <option name="IT"value="2"><label>IT</label></option>
+                                <option name="BIO"value="4"><label>BIO</label></option>
+                                <option name="MECH"value="5"><label>MECH</label></option>  
+                                <option name="CIVIL"value="6"><label>CIVIL</label></option>  
+                            </select>
+                        </div>
+
+
+                        <div class="input-container">
+                            <label>Father Name: *</label>
+                            <input type="text" name="fathername" placeholder="Enter father name" value="{{this.FATHER_NAME}}" required >
+                        </div>
+
+                        <div class="input-container">
+                            <label>Mother Name: *</label>
+                            <input type="text" name="mothername" placeholder="Enter mother name" value="{{this.MOTHER_NAME}}" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label>Father/Mother Number: *</label>
+                            <input type="text"  name="fmnumber" placeholder="Enter father/mother number" value="{{this.PARENT_PHONENUMBER}}" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label>10TH Percentage: *</label>
+                            <input type="text" name="ten" placeholder="Enter 10th mark percentage" value="{{this.MARKS_10TH}}" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label>12TH Percentage: *</label>
+                            <input type="text" name="twel" placeholder="Enter 12th mark percentage" value="{{this.MARKS_12TH}}" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label>Current CGPA: *</label>
+                            <input type="text" name="cgpa" placeholder="Enter current CGPA" value="{{this.CURRENTCGPA}}" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label>No of Standing Arrears: *</label>
+                            <input type="number" name="standing" placeholder="Enter number of standing arrears" value="{{this.NO_OF_STANDINGARREARS}}" required>
+                        </div>
+
+                        <div class="input-container">
+                            <label>History of Arrears: *</label> 
+                            <input type="number" name="history" placeholder="Enter history of arrears" value="{{this.HISTORY_OF_ARREARS}}" required>
+                            
+                        </div>
+
+                        <div class="address-field">
+                            <label>Address: *</label>
+                            <textarea name="textarea" rows="3" required>{{this.ADDRESS}}</textarea>
+                        </div>
+
+                        <div class="select-container">
+                            <label>Status: *</label>
+                            <select name="status" id="status-field" required>
+                                <option name="Placed" value="1"><label>Placed</label></option>
+                                <option name="NotPlaced" value="0"><label>Not Placed</label></option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    <div class="buttons">
+                        <div class="button-field">
+                            <button type="submit">Save Changes</button>
+                        </div>
+                         <div class="back-field">
+                            <a class="back" href="/coordinator_managestudent"> <button type="button">Back</button> </a>
+                        </div>
+                    </div>
+                    
+                   
+                </div>
+            
+                
+            </form>
+            {{/each}}
+
+
+
+
+        </section>
+    </body>
+    <script>
+        document.getElementById("default").value = "{{result.[0].DEPARTMENT}}";
+        document.getElementById("status-field").value = "{{result.[0].STATUS}}";
+
+        if("{{result.[0].GENDER}}" === "male"){
+
+            document.getElementById("m").checked = true;
+        }
+        else{
+            document.getElementById("f").checked = true;
+        }
+
+    </script>
+
+    <script src="/darkmode.js"></script>
+
+</html>

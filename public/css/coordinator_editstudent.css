@@ -1,0 +1,233 @@
+:root{
+    /* ====colors====*/
+    --current-text: #fff;
+    --current-select : royalblue;
+    --mybg-color:rgba(226, 232, 232, 0.858);
+    --primary-color: #0E4BF1;
+    --panel-color: #fff;
+    --text-color: #000;
+    --black-light-color: #3e3a3a;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #E7D1FC;
+    --box2-color: #FFE6AC;
+    --box3-color: #4DA3FF;
+    --title-icon-color: #fff;
+    
+    /*========= transition ========*/
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+body.dark{
+    
+   --current-text: #000;
+   --current-select : #fff;
+   --mybg-color:#242526;
+   --primary-color: #3A3B3C;
+   --panel-color: #242526;
+   --text-color: #CCC;
+   --black-light-color: #CCC;
+   --border-color: #4D4C4C;
+   --toggle-color: #FFF;
+   --box1-color: #3A3B3C;
+   --box2-color: #3A3B3C;
+   --box3-color: #3A3B3C;
+   --title-icon-color: #CCC;
+   transition: var(--tran-03);
+}
+.dashboard .manage{
+    
+    height: 35px;
+    padding-left: 10px;
+    justify-content: center;
+    background-color: #F8FAFD;
+}
+.manage .title{
+    display: flex;
+    align-items: center;
+    margin : 40px 0 15px 0;
+}
+.manage .title i{
+
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.manage .title .text{
+
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* form design starts here*/
+form{
+    position: relative;
+    width: auto;
+    height: 900px;
+    padding: 10px;
+}
+form .top-form{
+    position: absolute;
+    height: 900px;
+    margin: 10px 0px 0px 5px;
+}
+form .top-form .fields{
+    padding: 30px;
+    margin: 5px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+    flex-wrap: wrap;    
+}
+form .top-form .fields .input-container{
+    display: flex;
+    flex-direction: column;
+    width: calc(80% / 3 - 15px);
+    margin: 5px;
+}
+form .fields .input-container input{
+    height: 35px;
+    color: #333;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 2px;
+    margin: 5px 0;
+    font-size: 14px;
+    padding: 0 10px;
+    font-weight: 400;
+}
+form .top-form .fields .select-container{
+    display: flex;
+    flex-direction: column;
+    width: calc(80% / 3 - 15px);
+    margin: 5px;
+}
+form .fields .select-container select{
+    height: 35px;
+    outline : none;
+    border: 1px solid silver;
+    border-radius: 2px;
+    margin: 5px 0px;
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 0 10px;
+    color: #707070;
+}
+form .top-form .fields .radio-container{
+    width: calc(80% / 3 - 15px);
+    margin: 30px 5px 5px 5px;
+}
+form .fields .radio-container input{
+    border: 1px solid silver;
+    margin: 10px 10px 0px 10px;
+}
+form .top-form .fields .address-field{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: calc(80% / 3 - 15px);
+}
+form .fields .address-field textarea{
+    color: #333;
+    font-size: 14px;
+    font-family: sans-serif;
+    resize: none;
+    height: 60px;
+    border-radius: 2px;
+    border: 1px solid silver;
+    margin: 5px 0px;
+    padding: 0 10px;
+    outline: none;
+}
+form .top-form .buttons{
+    display: flex;
+    padding: 0px 30px 30px 30px;
+    width: 500px;
+    height: 50px;
+    justify-content: space-between;
+}
+form .top-form .buttons .button-field{
+    position: relative;
+    height: 40px;
+    width: 190px;
+}
+form .top-form .buttons .button-field button{
+    display: flex;
+    background-color: royalblue;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 190px;
+    width: 100%;
+    border: 1px solid royalblue;
+    outline: none;
+    margin: 0px 0px 0px 25px;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: white;
+    cursor: pointer;
+} 
+form .top-form .button-field button:hover{
+    background-color: rgb(46, 99, 255);
+}
+form .top-form .buttons .back-field{
+    height: 40px;
+    width: 190px;
+}
+form .top-form .buttons .back{
+    text-decoration: none;
+    font-size: 17px;
+}
+form .top-form .buttons .back-field button{
+    display: flex;
+    background-color: royalblue;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 190px;
+    width: 100%;
+    border: 1px solid royalblue;
+    outline: none;
+    margin: 0px 0px 0px 25px;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: white;
+    cursor: pointer;
+}
+form .top-form .back-field button:hover{
+    background-color: rgb(46, 99, 255);
+}
+form .fields .input-container input:is(:focus){
+    border-color: royalblue;
+}
+form .fields .input-container input[type="date"]{
+    color: #707070;
+}
+form .fields .input-container input[type="date"]:valid{
+    color:#333;
+}
+form .fields .select-container select:is(:focus){
+    border-color: royalblue;
+}
+form .fields .select-container select:hover{
+    color: #333;
+}
+/* Updated msg*/
+.good{
+    color: green;
+    font-size: 19px;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 10px;
+}

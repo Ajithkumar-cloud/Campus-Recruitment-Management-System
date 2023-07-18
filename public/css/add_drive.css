@@ -1,0 +1,274 @@
+:root{
+    /* ====colors====*/
+    --current-text: #fff;
+    --current-select : royalblue;
+    --mybg-color:rgba(226, 232, 232, 0.858);
+    --primary-color: #0E4BF1;
+    --panel-color: #fff;
+    --text-color: #000;
+    --black-light-color: #3e3a3a;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #E7D1FC;
+    --box2-color: #FFE6AC;
+    --box3-color: #4DA3FF;
+    --title-icon-color: #fff;
+    
+    /*========= transition ========*/
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+body.dark{
+    
+   --current-text: #000;
+   --current-select : #fff;
+   --mybg-color:#242526;
+   --primary-color: #3A3B3C;
+   --panel-color: #242526;
+   --text-color: #CCC;
+   --black-light-color: #CCC;
+   --border-color: #4D4C4C;
+   --toggle-color: #FFF;
+   --box1-color: #3A3B3C;
+   --box2-color: #3A3B3C;
+   --box3-color: #3A3B3C;
+   --title-icon-color: #CCC;
+   transition: var(--tran-03);
+}
+.dashboard .manage{
+    padding-left: 10px;
+    width: auto;
+    height: 950px;
+ }
+ .manage .title{
+   display: flex;
+   align-items: center;
+   margin: 40px 0 15px 0;
+ }
+ .manage .title i{
+     position:relative;
+     height: 30px;
+     width: 30px;
+     background-color: var(--primary-color);
+     border-radius: 6px;
+     color: var(--title-icon-color);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ .manage .title .text{
+     font-family: sans-serif;
+     font-size: 20px;
+     margin-left: 10px;
+     font-weight: 500;
+     color:var(--text-color);
+ }
+.manage form{
+    
+    padding: 30px 10px 0px 60px;
+    margin-left: 5px;
+    margin-right: 20px;
+    height: 850px;
+    /* background-color: var(--panel-color); */
+ }
+.manage form .input-field,.date-field,.medium-field,.big-field,.eligible-field{
+    margin-bottom: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.manage .cotext{
+    font-size: 17px;
+    margin-left: 5px;
+    color: #141414f1;
+}
+.manage .sotext{
+    font-size: 17px;
+    color: #141414f1;
+    margin-left: 0px;
+}
+.manage form .input-field input{
+    height: 30px;
+    width: 350px;
+    font-size: 17px;
+    border: 1px solid silver;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 3px;
+    color:rgb(18,16,16);
+}
+form .input-field input:focus,form .medium-field textarea:focus,
+form .big-field textarea:focus{
+    border : 1.5px solid rgb(47, 99, 255); 
+    background-color: white;
+}
+form .date-field input{
+    height: 30px;
+    width: 250px;
+    color: #707070;
+    font-size: 17px;
+    border: 1px solid silver;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 3px;
+}
+form .eligible-field{
+    display: flex;
+    height: 67px;
+    /* background-color: red; */
+}
+form .eligible-field .select-field{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+form .eligible-field .child-field{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 0px 15px 5px 1px;
+}
+form .eligible-field .select-field select{
+    margin-top: 5px;
+    height: 50px;
+    width: 150px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid silver;
+    opacity: 0.8;
+    outline: none;
+    color: rgb(18, 16, 16);
+    padding: 0 10px;
+}
+form .eligible-field .child-field input{
+    height: 25px;
+    width: 70px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid silver;
+    opacity: 0.8;
+    outline: none;
+    color: rbg(18,16,16);
+    padding: 0 10px;
+    margin-top: 5px;
+}
+form .eligible-field .history-field{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 0px 15px 5px 1px;
+}
+form .eligible-field .history-field input{
+    height: 25px;
+    width: 70px;
+    font-size: 15px;
+    border-radius: 3px;
+    border : 1px solid silver;
+    opacity: 0.8;
+    outline: none;
+    color: rgb(18,16,16);
+    padding: 0 10px;
+    margin-top: 5px;
+}
+.select-field select:focus{
+    border-color: royalblue;
+}
+form .medium-field textarea{
+    height: 50px;
+    width: 350px;
+    flex: 7;
+    font-size: 17px;
+    padding: 0 10px;
+    border-radius: 3px;
+    color:rgb(18,16,16);
+    outline: none;
+    border: 1px solid silver;
+}
+form .big-field textarea{
+    border: 1px solid silver;
+    outline: none;
+    border-radius: 3px;
+    font-size: 17px;
+    width: 350px;
+    padding: 0 10px;
+}
+form .saveback{
+    display: flex;
+}
+
+/* alert design*/
+.manage .alert{
+    background-color: #fff;
+    font-size: 17px;
+    font-family: sans-serif;
+    border: 1px solid silver;
+    margin-left: 5px;
+    margin-right: auto;
+    padding-left: 65px;
+}
+form .saveback .field-button{
+    height: 50px;
+    width: 150px;
+    outline: none;
+    margin-left: 5px;
+}
+form .saveback .backbutton{
+    height: 50px;
+    width: 150px;
+    outline: none;
+    margin-left: 70px;
+   
+}
+form .saveback button .back{
+   text-decoration: none;
+   color: rgba(255, 255, 255, 0.893);
+}
+form .saveback  button{
+    height: 48px;
+    width: 150px;
+    background-color: royalblue;
+    outline: #4a4a4a;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.893);
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1.5px solid royalblue;
+ 
+}
+/* 
+form .backbutton{
+    background-color: royalblue;
+    height: 10px;
+    width: 110px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: #4a4a4a;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 10px;
+}
+form .backbutton .back{
+    text-decoration: none;
+    font-size: 17px;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.893); 
+}
+form .field-button{
+    margin-top: 20px;
+    height: 50px;
+    width: 150px;
+    margin-left: 10px;
+}
+form .field-button button{
+    border-radius: 3px;
+    height: 48px;
+    width: 150px;
+    background-color: royalblue;
+    outline: #4a4a4a;
+    color: rgba(255, 255, 255, 0.893);
+    cursor: pointer;
+
+}
+*/

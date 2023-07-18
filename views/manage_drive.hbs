@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <!----------------------CSS SIDE DASHBOARD LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/manage_drive.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+
+
+    </head>
+    <body>
+          <!--====================Side Nav bar starting======================-->
+            {{> admin_navbar}}
+           <!--===========Nav bar ending ===========-->
+            <!--setup navigation bar-->
+           <section class="dashboard">
+                <div class="top">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="setupbar">
+                    <div class="thingsbar">
+                        <div class="set-link">
+                             <i class="fa-brands fa-windows"></i>
+                             <a class="navtext" href=""><span>Back to Home</span></a>
+                        </div>
+                        <div class="set-link">
+                             <i class="fas fa-sign-out-alt"></i>
+                             <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                        </div>
+                        <div class="user-img">
+                            <span class="userimg-design">
+                                <i class="fa-solid fa-user"></i>
+                            </span>   
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manage">
+                    <div class="title">
+                        <i class="fa-solid fa-folder-plus"></i>
+                        <span class="text">Manage Drives</span>
+                    </div>
+                    <div class="add">
+                        <div class="abb">
+                            <i class="fa-regular fa-square-plus"></i>
+                            <a  class="addtext" href="/add_drive">Add Drive</a>
+                        </div>
+                    </div>
+                </div>    
+                <div class="table_container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>S.NO</td>
+                                <td>COMPANYNAME</td>
+                                <td>DRIVE DATE</td>
+                                <td>ELIGIBLE DEPARTMENTS</td>
+                                <td>MARKS_10TH</td>
+                                <td>MARKS_12TH</td>
+                                <td>CGPA</td>
+                                <td>HISTORY OF BACKLOGS</td>
+                                <td>NO OF STANDING BACKLOGS</td>
+                                <td>SALARY</td>
+                                <td>DETAILS</td>
+                                <td>VENUE</td>
+                                <td>EDIT</td>
+                                <td>DELETE</td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{#each result}}
+                         {{!-- {{#if (checkEligibleDepartment this.DRIVE_DATE)}} --}}
+                            <tr>
+                                <td>{{this.SNO}}</td>
+                                <td>{{this.COMPANY_NAME}}</td>
+                                <td>{{this.DRIVE_DATE}}</td>
+                                <td>{{printDepartment this.DEPARTMENT}}</td>
+                                <td>{{printMark this.MARKS_10TH}}</td>
+                                <td>{{printMark this.MARKS_12TH}}</td>
+                                <td>{{printMark this.CURRENTCGPA}}</td>
+                                <td>{{printArrear this.HISTORY_OF_ARREARS}}</td>
+                                <td>{{printArrear this.NO_OF_STANDINGARREARS}}</td>
+                                <td>{{this.SALARY}}</td>
+                                <td>{{this.ABOUT}}</td>
+                                <td>{{this.VENUE}}</td>
+                                <td><a class="edit" href="/auth/edit_drive/{{this.SNO}}"><i class="fa-regular fa-pen-to-square"></i></a></td>
+                                <td><a onclick="return confirm('Are You Sure?')" class="delete" href="/auth/delete_drive/{{this.SNO}}"><i class="fa-regular fa-trash-can"></i></a></td>
+                            </tr>
+                         {{!-- {{/if}} --}}
+                        {{/each}}
+                        </tbody>
+                    </table><!---/auth/edit_drive/{{this.SNO}} -->
+
+                </div>
+                    <!-- table starts here    -->
+                    
+            </section>
+            <!--setup navigation bar-->
+
+            <script src="/darkmode.js"></script>
+    </body>
+
+</html>

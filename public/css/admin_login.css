@@ -1,0 +1,108 @@
+.top{
+    margin: 110px auto;
+    width: 730px;
+    background-color: #fff;
+    font-family: sans-serif;
+    height: 700px;
+    box-sizing: border-box;
+
+}
+.top .heading{
+  padding: 5px 0;
+}
+.top .heading h2{
+    font-size: 20px;
+    margin-left: 240px;
+}
+.top .mid-form{
+   padding: 10px;
+   padding-left: 60px;
+   width: auto;
+   height: 600px;
+   
+}
+.top .mid-form form{
+ position: absolute;
+ box-sizing: border-box;
+ padding: 40px 10px 0px 60px;
+}
+.top .mid-form form .input-field{
+  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+}
+.top .mid-form .regtext{
+    font-size: 17px;
+    margin-left: 48px;
+    padding: 0px 5px;
+    color: #141414f1;
+}
+.top .mid-form .ey-icon .passtext{
+    font-size: 17px;
+    margin-left: 48px;
+    padding: 0px 5px;
+    color: #141414f1;
+}
+.top form .input-field input{
+    height: 35px;
+    width: 300px;
+    border: 1px solid silver;
+    padding: 0 10px;
+    border-radius: 3px;
+    font-size: 17px;
+    opacity: 0.8;
+    outline: none;
+    margin-left: 20px;
+    color: rgb(18, 16, 16);
+}
+.top form .input-field input:focus{
+    border : 1.5px solid rgb(47, 99, 255); 
+    background-color: white;
+}
+.top .mid-form .field-button{
+    margin-left: 50px;
+    margin-top: 40px;
+    height: 50px;
+    width: 150px;
+    outline: none;
+}   
+.top .mid-form .field-button button{
+    border-radius: 3px;
+    height: 48px;
+    width: 150px;
+    background-color:royalblue;
+    outline: #4a4a4a;
+    color: rgba(255, 255, 255, 0.893);
+    cursor: pointer;
+    border: 1.5px solid royalblue;
+}   
+.top .mid-form .field-button button:hover{
+    background-color: rgb(43, 95, 250);
+}
+.fa-user-tie,.fa-lock{
+    font-size: 20px;
+    height: 30px;
+    width: 10px;
+    color: rgb(0, 0, 0);
+    transform: translateY(4px);
+}
+.top .mid-form .ey-icon{
+    display: flex;
+    height: 20px;
+    width: 390px;
+}
+#access{
+    transform: translateX(201px);
+    font-size: 17px;
+    height: 30px;
+    width: 10px;
+    color: royalblue;
+    cursor: pointer;
+}
+.top .heading .error{
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+    margin-left: 180px;
+}

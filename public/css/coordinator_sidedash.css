@@ -1,0 +1,308 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--panel-color);
+    min-height: 100vh;
+    font-family: sans-serif;
+    font-size: 17px;
+}
+:root{
+     /* ====colors====*/
+     --current-text: #fff;
+     --current-select : royalblue;
+     --mybg-color:rgba(226, 232, 232, 0.858);
+     --primary-color: #0E4BF1;
+     --panel-color: #fff;
+     --text-color: #000;
+     --black-light-color: #3e3a3a;
+     --border-color: #e6e5e5;
+     --toggle-color: #DDD;
+     --box1-color: #E7D1FC;
+     --box2-color: #FFE6AC;
+     --box3-color: #4DA3FF;
+     --title-icon-color: #fff;
+     
+     /*========= transition ========*/
+     --tran-05: all 0.5s ease;
+     --tran-03: all 0.3s ease;
+     --tran-02: all 0.2s ease;
+}
+body.dark{
+     
+    --current-text: #000;
+    --current-select : #fff;
+    --mybg-color:#242526;
+    --primary-color: #3A3B3C;
+    --panel-color: #242526;
+    --text-color: #CCC;
+    --black-light-color: #CCC;
+    --border-color: #4D4C4C;
+    --toggle-color: #FFF;
+    --box1-color: #3A3B3C;
+    --box2-color: #3A3B3C;
+    --box3-color: #3A3B3C;
+    --title-icon-color: #CCC;
+    transition: var(--tran-03);
+}
+nav{
+    position: fixed;
+    height: 100%;
+    width: 230px;
+    background-color: var(--panel-color);
+    top: 0;
+    left: 0;
+    padding: 10px 14px;
+    border-right: 2px solid var(--border-color);
+    transition: var(--tran-03);
+}
+nav.close{
+    width: 53px;
+}
+nav .logo-name{
+   display: flex;
+   align-items: center;
+   margin-left: -2px;
+}
+nav .logo-image img{
+    height: 66px;
+    width: 60px;
+    margin-top: -12px;
+}
+nav .logo-image{
+    display: flex;
+    justify-content: center;
+    min-width: 65px;
+}
+nav .logo-name .logo_name{
+
+    font-size: 22px;
+    color: #0E4BF1;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-top: -12px;
+    transition: var(--tran-03);
+}
+nav.close .logo_name{
+    opacity: 0;
+    pointer-events: none;
+}
+/* navbar items design*/
+nav .menu-items{
+    background-color: var(--panel-color);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: calc(100% - 100px);
+    justify-content: space-between;
+    margin-left: -33px;
+    
+}
+nav .menu-items li{
+    list-style-type: none;
+}
+nav .menu-items li a{
+    text-decoration: none;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    position: relative;
+}
+.nav-links li a:hover:before{
+    content: "";
+    position: absolute;
+    left: -7px;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+/*
+nav .menu-items .nav-links{
+  background-color: #0E4BF1;
+} 
+*/  
+body.dark li a:hover:before{
+    background-color: var(--text-color);
+}
+
+.menu-items li a i{
+    font-size: 20px;
+    height: 100%;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black-light-color);
+}
+.menu-items li a .link-name{
+    color: var(--black-light-color);
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: 400;
+    transition: var(--tran-03);
+}
+nav.close li a .link-name{
+    opacity: 0;
+    pointer-events: none;
+}
+.menu-items .nav-links{
+    padding-top: 5px;
+
+}
+.nav-links li a:hover i,
+.nav-links li a:hover .link-name{
+    color: var(--primary-color);
+}
+body.dark .nav-links li a:hover i,
+body.dark .nav-links li a:hover .link-name{
+    color: var(--text-color);
+}
+.menu-items .mode{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.menu-items .logout-mod{
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+.menu-items .mode-toggle{
+    position: absolute;
+    right: 14px;
+    height: 40px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.mode-toggle .switch{
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+}
+.switch:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    border-radius: 50%;
+    height: 15px;
+    width :15px;
+    transform: translateY(-50%);
+    background-color: var(--panel-color);
+}
+body.dark .switch:before{
+
+    left: 20px;
+}
+/* nav bar ending */
+
+.dashboard{
+    position: relative;
+    background-color: var(--panel-color);
+    left: 259px;
+    width: calc(100% - 259px);
+    transition: var(--tran-03);
+    height: 100%;
+}
+nav.close ~ .dashboard{
+    left:82px;
+    width: calc(100% - 82px);
+}
+nav.close ~ .dashboard .top{
+    left: 82px;
+    width: calc(100% - 82px);
+}
+.dashboard .top{
+    top: 0;
+    align-items: center;
+    background-color: var(--panel-color);
+    width: calc(100% - 259px);
+    justify-content: space-between;
+    left: 259px;
+}
+.dashboard .fa-bars{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-right: 2px;
+    padding-left: 10px;
+    color: var(--text-color);
+}
+/* 
+nav.close ~ .dashboard .setupbar{
+  position: relative;
+  left: 82px;          position fixed meand left 94 and width
+  width: calc(100% - 82px);
+  transition: var(--tran-05);
+} */
+/* div setup nav bar starting*/
+
+
+.dashboard .setupbar{
+    position: relative;
+    background-color: var(--panel-color);
+    display: flex;
+    left: 30px;  /* set left=259 and mar-left 30 for position:fixed*/
+    width: calc(100% - 30px);
+    height: 60px;
+    top: 0;
+    justify-content: right;
+    border-bottom: 1px solid var(--border-color);
+
+}
+.dashboard .setupbar .thingsbar{
+    display: flex;
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    text-align: center;
+    justify-content: space-between;
+}
+.dashboard .setupbar .thingsbar .set-link{
+    
+    margin-top: 10px;
+    height: 30px;
+    width: 180px;
+    padding-top: 10px;
+    margin-left: 10px;
+   
+}
+.dashboard .setupbar .thingsbar .user-img{
+    margin-top: 10px;
+    height: 30px;
+    width: 45px;
+    padding-top: 10px;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.dashboard .setupbar .thingsbar .user-img i{
+    height: 20px;
+    width: 20px;
+    color: var(--title-icon-color);
+}
+.dashboard .setupbar .thingsbar .set-link i{
+    position: absolute;
+    height: 30px;
+    width: 10px;
+    transform: translateX(-30px);
+    margin-top: 2px;
+    color: var(--black-light-color);
+}
+.dashboard .setupbar .thingsbar .set-link .navtext{
+    text-decoration: none;
+    color: var(--text-color);
+} 
+
+/* div setup nav bar starting*/

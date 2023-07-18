@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        
+        <!----------------------ADMIN CSS LINKING ONLY NAVBAR DESIGN ------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_placement.css">
+        
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+    </head>
+    <body>
+        <!--====================Side Nav bar starting======================-->
+        {{> admin_navbar}}
+        <!--===========Nav bar ending ===========-->
+        
+        <!--setup navigation bar start-->
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="setupbar">
+                <div class="thingsbar">
+                    <div class="set-link">
+                        <i class="fa-brands fa-windows"></i>
+                        <a class="navtext" href=""><span>Back to Home</span></a>
+                    </div>
+                    <div class="set-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                    </div>
+                    <div class="user-img">
+                        <span class="userimg-design">
+                            <i class="fa-solid fa-user"></i>
+                        </span>   
+                            
+                    </div>
+                </div>
+            </div>
+
+            <!--setup navigation bar end-->
+
+            <!--  starting heading name-->
+            <div class="manage">
+                <div class="title">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <span class="text">Manage Placement</span>
+                </div>
+            </div>  
+            <!-- heading name end-->
+
+            {{#if msg}}
+             <span class="{{msg_type}}">{{msg}}</span>
+            {{/if}}
+            {{#if error}}
+             <span class="{{msg_type}}">{{error}}</span>
+            {{/if}} 
+            <!-- form starting-->
+
+            <div class="form-top">
+                <div class="form-mid">
+                    <form id="firstform" method="POST" action="/auth/admin_placementviewbutton">
+                        
+                        <div class="form-elements">
+
+                            <div class="select-field">
+                                <label class="select-text">Select Department: *</label>
+                                <select id="default"name="department">
+                                    <option value="0" selected disabled hidden><label>Choose your dep</label></option>
+                                    <option name="CSE"value="1">CSE</option>
+                                    <option name="ECE"value="3">ECE</option>
+                                    <option name="IT" value="2">IT</option>
+                                    <option name="BIO"value="4">BIO</option>
+                                    <option name="MECH"value="5">MECH</option>
+                                    <option name="CIVIL"value="6">CIVIL</option>
+                                </select>
+                            </div>
+
+                            <div class="button-field">
+                                <input type="submit" value="View">
+                            </div> 
+
+                            {{#if viewclicked}}
+                            <div class="select-field" class="d-none">
+                                <label>Select Company: *</label>
+                                <select name="company">
+                                    <option value="0" selected disabled hidden><label>Choose Company</label></option>
+                                    {{#each result}}
+                                    <option value="{{this.SNO}}">{{this.COMPANY_NAME}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+
+                            <div class="button-field">
+                                <button type="submit" formaction="/auth/admin_placementupdate">Update</button>
+                            </div>
+                            {{/if}}
+
+                        </div>
+                        <!-- table student list-->
+                        <div class="table-container">
+                            <div class="table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>NAME</th>
+                                            <th>REGNO</th>
+                                            <th>EMAIL</th>
+                                            <th>PHONE_NUMBER</th>
+                                            <th>GENDER</th>
+                                            <th>DATEOFBIRTH</th>
+                                            <th>DEPARTMENT</th>
+                                            <th>FATHER_NAME</th>
+                                            <th>MOTHER_NAME</th>
+                                            <th>PARENT_PHONENUMBER</th>
+                                            <th>10TH</th>
+                                            <th>12TH</th>
+                                            <th>CURRENTCGPA</th>
+                                            <th>NO_OF_STANDINGARREARS</th>
+                                            <th>HISTORY_OF_ARREARS</th>
+                                            <th>ADDRESS</th>      
+                                        </tr>        
+                                    </thead>
+                                    <tody>
+                                        {{#each list}}
+                                        <tr>
+                                            <td><input type="checkbox" name="checked" value="{{this.ID}}"></td>
+                                            <td>{{this.NAME}}</td>
+                                            <td>{{this.REGNO}}</td>
+                                            <td>{{this.EMAIL}}</td>
+                                            <td>{{this.PHONE_NUMBER}}</td>
+                                            <td>{{this.GENDER}}</td>
+                                            <td>{{changeDateFormat this.DATEOFBIRTH}}</td>
+                                            <td>{{compare this.DEPARTMENT}}</td>
+                                            <td>{{this.FATHER_NAME}}</td>
+                                            <td>{{this.MOTHER_NAME}}</td>
+                                            <td>{{this.PARENT_PHONENUMBER}}</td>
+                                            <td>{{this.MARKS_10TH}}</td>
+                                            <td>{{this.MARKS_12TH}}</td>
+                                            <td>{{this.CURRENTCGPA}}</td>
+                                            <td>{{this.NO_OF_STANDINGARREARS}}</td>
+                                            <td>{{this.HISTORY_OF_ARREARS}}</td>
+                                            <td>{{this.ADDRESS}}</td>
+                                        </tr>
+                                        {{/each}}
+                                            
+                                    </tody>       
+                                </table>
+
+                            </div>
+                        </div>
+                        <!-- table student view list end-->
+                    </form>
+                </div>
+            </div>
+
+
+
+
+
+        </section>       
+
+    </body>
+    <script>
+        document.getElementById("default").value = "{{department}}";
+    </script>
+    <script src="/darkmode.js"></script>
+
+</html>

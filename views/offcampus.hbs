@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/offcampus.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+    </head>
+    <body>
+        
+        <nav id="pos">
+            <label class="logo"><img src="/css/images/campus-logo.png" alt="campus"width="200" height="70"></label>
+            
+            <ul>
+                <li class="home"><a href="/dashboard">Back</a></li>
+            </ul>    
+        </nav>
+
+         <!-- title heading start-->
+        <div class="manage">
+            <div class="title">
+                <span class="text">Off Campus Jobs</span>
+            </div>
+        </div>  
+
+        <!-- title heading end-->
+
+        <!-- table student list-->
+        <div class="table-container">
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>COMPANY NAME</th>
+                            <th>COMPANY WEBSITE</th>
+                            <th>LINKEDIN COMPANY</th>
+                            <th>JOB TITLE</th>
+                            <th>JOB LOCATION</th> 
+                            <th>POSTED DATE</th> 
+                            <th>JOBLINK</th>
+                            <th>LINKEDIN JOB URL</th>
+                        </tr>        
+                    </thead>
+                    <tody>  
+                        {{#each data}}             
+                        <tr>
+                            <td>{{this.company_name}}</td>
+                            <td><a href="{{this.company_url}}">{{this.company_url}}</a></td>
+                            <td><a href="{{this.linkedin_company_url_cleaned}}">{{this.linkedin_company_url_cleaned}}</a></td>
+                            <td>{{this.job_title}}</td>
+                            <td>{{this.job_location}}</td>
+                            <td>{{this.posted_date}}</td>
+                            <td><a href="{{this.job_url}}">{{this.job_url}}</a></td>
+                            <td><a href="{{this.linkedin_job_url_cleaned}}">{{this.linkedin_job_url_cleaned}}</a></td>                            
+                        </tr>
+                        {{/each}}          
+                    </tody>       
+                </table>
+
+            </div>
+        </div>
+
+    </body>
+
+
+</html>

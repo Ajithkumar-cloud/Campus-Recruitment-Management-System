@@ -1,0 +1,120 @@
+.top{
+    background-color: #fff;
+    margin: 110px auto;
+    font-family: sans-serif;
+    width: 730px;
+    height: 700px;
+    box-sizing: border-box;
+}
+.top .heading{
+    text-align: center;
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 5px 0px;
+}
+.top .mid-form{
+    padding: 10px;
+    padding-left: 60px;
+    height: 600px;
+    width: auto;
+}
+.top .mid-form form{
+    box-sizing: border-box;
+    padding: 40px 10px 0px 60px;
+}
+.top .mid-form .regtext{
+    font-size: 17px;
+    margin-left: 48px;
+    padding: 0px 5px;
+    color: #141414f1;
+}
+.top .mid-form .selecttext{
+    font-size: 17px;
+    margin-left: 48px;
+    padding: 0px 5px;
+    color: #141414f1;
+}
+.top .mid-form .ey-icon .passtext{
+    font-size: 17px;
+    margin-left: 48px;
+    padding: 0px 5px;
+    color: #141414f1;
+}
+.top .mid-form form .input-field{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+}
+.top .mid-form .input-field input,.select-field select{
+    height: 35px;
+    width: 300px;
+    border: 1px solid silver;
+    padding: 0 10px;
+    border-radius: 3px;
+    font-size: 17px;
+    opacity: 0.8;
+    outline: none;
+    margin-left: 20px;
+    color: rgb(18, 16, 16);
+}
+.top form .input-field input:focus{
+    border : 1.5px solid rgb(47, 99, 255); 
+    background-color: white;
+}
+.top form .select-field select:focus{
+    border : 1.5px solid rgb(47, 99, 255); 
+    background-color: white;
+}
+.top .mid-form form .select-field{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    padding-left: 2px;
+    padding-bottom: 20px;
+}
+.top .mid-form .button-field{
+    margin-left: 50px;
+    margin-top: 40px;
+    height: 50px;
+    width: 150px;
+    outline: none;
+}   
+.top .mid-form .button-field button{
+    height: 48px;
+    width: 150px;
+    border-radius: 3px;
+    outline: #4a4a4a;
+    background-color: royalblue;
+    color: rgba(255, 255, 255, 0.893);
+    cursor: pointer;
+    border: 1.5px solid royalblue;
+}
+.top .mid-form .button-field button:hover{
+    background-color: rgb(43, 95, 250);
+}
+.fa-id-card,.fa-lock{
+    font-size: 20px;
+    height: 30px;
+    width: 10px;
+    color: rgb(0, 0, 0);
+    transform: translateY(4px);
+}
+.top .mid-form .ey-icon{
+    display: flex;
+    height: 20px;
+    width: 390px;
+}
+#access{
+    transform: translateX(120px);
+    font-size: 17px;
+    height: 30px;
+    width: 10px;
+    color: royalblue;
+    cursor: pointer;
+}
+.top .heading .error{
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}

@@ -1,0 +1,220 @@
+:root{
+    /* ====colors====*/
+    --current-text: #fff;
+    --current-select : royalblue;
+    --mybg-color:rgba(226, 232, 232, 0.858);
+    --primary-color: #0E4BF1;
+    --panel-color: #fff;
+    --text-color: #000;
+    --black-light-color: #3e3a3a;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #E7D1FC;
+    --box2-color: #FFE6AC;
+    --box3-color: #4DA3FF;
+    --title-icon-color: #fff;
+    
+    /*========= transition ========*/
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+body.dark{
+    
+   --current-text: #000;
+   --current-select : #fff;
+   --mybg-color:#242526;
+   --primary-color: #3A3B3C;
+   --panel-color: #242526;
+   --text-color: #CCC;
+   --black-light-color: #CCC;
+   --border-color: #4D4C4C;
+   --toggle-color: #FFF;
+   --box1-color: #3A3B3C;
+   --box2-color: #3A3B3C;
+   --box3-color: #3A3B3C;
+   --title-icon-color: #CCC;
+   transition: var(--tran-03);
+}
+.dashboard .manage{
+    
+    height: 35px;
+    padding-left: 10px;
+    justify-content: center;
+}
+.manage .title{
+    display: flex;
+    align-items: center;
+    margin : 40px 0 15px 0;
+}
+.manage .title i{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.manage .title .text{
+
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+/*  form design starts here*/
+.dashboard .form-top{
+
+    height: 900px;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+.form-top .form-mid{
+    height: 900px;
+}
+.form-top .form-mid form{
+    height: 800px;
+}
+.form-top .form-mid form .form-elements{
+    height: 70px;
+    display: flex;
+}
+.form-top form .form-elements .select-field{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 5px 15px 5px 1px;
+}
+form .form-elements .select-field select{
+    height: 28px;
+    width: 150px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid silver;
+    opacity: 0.8;
+    outline: none;
+    color: rgb(18, 16, 16);
+    padding: 0 5px;
+}
+.select-field select:focus{
+    border-color: royalblue;
+ }
+.select-field select:hover{
+   color: #333;
+}
+form .form-elements .button-field{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 15px 5px 1px;
+    outline: none;
+}
+form .form-elements .button-field input[type="submit"]{
+    margin-top: 18px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    line-height: 25px;
+    background-color:royalblue;
+    color: rgba(255, 255, 255, 0.893);
+    border-radius: 3px;
+    outline: #4a4a4a;
+    border: 1px solid royalblue;
+}
+form .button-field input[type="submit"]:hover{
+    background-color: rgb(43, 95, 250);
+}
+
+form .table-container tbody input[type="checkbox"]{
+    height: 14px;
+    width: 14px ;
+    border-radius: 3px;
+}
+
+/* button-field update button*/
+form .form-elements button{
+    margin-top: 18px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(244, 55, 55);
+    color: rgba(255, 255, 255, 0.893);
+    border-radius: 3px;
+    outline: #4a4a4a;
+    border: 1px solid rgb(244, 55, 55);
+}
+
+/* table design starts here*/
+.dashboard .table-container{
+    width: 99%;
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: 20px auto auto 10px;
+    
+ }
+ .table-container .table{
+     width: 100%;
+     border-collapse: collapse;
+ }
+ .table thead tr th{
+     font-size: 17px;
+     font-family: sans-serif;
+     letter-spacing: 0.35px;
+     color: #fff;
+     padding: 15px;
+     background-color: #0E4BF1;
+     border-bottom: 2px solid rgba(210,217,231,.6);
+   
+ }
+ .table tbody tr td{
+     font-size: 17px;
+     font-family: sans-serif;
+     padding: 15px;
+     border-bottom: 2px solid rgba(210,217,231,.6);
+     background-color: #fff; 
+ }
+
+ .table-container .edit{
+    color: var(--current-select);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+ }
+
+ .table-container .delete{
+
+    color: red;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+/* table design ends here*/
+.error_css{
+    font-size: 19px;
+    color: red;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.good{
+    font-size: 19px;
+    color: green;
+    margin-left: 10px;
+    font-weight: bold;
+}
+ /* admin manaeg placement current select color*/
+ #manage_placement{
+    background-color: var(--current-select);
+}
+#manage_placementicon{
+ color: var(--current-text);
+}
+#management_placementcolor{
+ color: var(--current-text);
+}

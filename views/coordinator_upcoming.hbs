@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <!----------------------CSS SIDE DASHBOARD LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/coordinator_sidedash.css">
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/coordinator_upcoming.css">
+        <!-----------------------CSS IMAGE SLIDE LINKING CODE---------------------->
+        <link rel="stylesheet" type="text/css" href="/css/imageslide.css">
+
+          <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+    </head>
+    <body>
+             <!--====================Side Nav bar starting======================-->
+            {{> co_navbar}}
+           <!--===========Nav bar ending ===========-->
+            <!--setup navigation bar-->
+           <section class="dashboard">
+                <div class="top">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="setupbar">
+                    <div class="thingsbar">
+                        <div class="set-link">
+                             <i class="fa-brands fa-windows"></i>
+                             <a class="navtext" href=""><span>Back to Home</span></a>
+                        </div>
+                        <div class="set-link">
+                             <i class="fas fa-sign-out-alt"></i>
+                             <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                        </div>
+                        <div class="user-img">
+                            <span class="userimg-design">
+                                <i class="fa-solid fa-user"></i>
+                            </span>   
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="manage">
+                    <div class="title">
+                        <i class="fa-regular fa-folder-open"></i>
+                        <span class="text">Upcoming Drives</span>
+                    </div>
+                    
+                    <!-- image sliding start-->    
+                    {{> imgslide}}
+                     <!-- image sliding end-->    
+
+                </div>
+                <div class="table-container">
+                    <table class="tab">
+                        <thead>
+                            <tr>
+                                <th>S.NO</th>
+                                <th>COMPANYNAME</th>
+                                <th>DRIVE DATE</th>
+                                <th>ELIGIBLE DEPARTMENTS</th>
+                                <th>MARKS_10TH</th>
+                                <th>MARKS_12TH</th>
+                                <th>CGPA</th>
+                                <th>HISTORY OF BACKLOGS</th>
+                                <th>NO OF STANDING BACKLOGS</th>
+                                <th>SALARY</th>
+                                <th>DETAILS</th>
+                                <th>VENUE</th>        
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#each result}}   
+                            <tr>
+                                <td data-label="S.NO">{{this.SNO}}</td>
+                                <td data-label="COMPANYNAME">{{this.COMPANY_NAME}}</td>
+                                <td data-label="DRIVEDATE">{{this.DRIVE_DATE}}</td>
+                                <td data-label="ELIGIBLE DEPARTMENTS">{{printDepartment this.DEPARTMENT}}</td>
+                                <td data-label="MARKS_10TH">{{printMark this.MARKS_10TH}}</td>
+                                <td data-label="MARKS_12TH">{{printMark this.MARKS_12TH}}</td>
+                                <td data-label="CGPA">{{printMark this.CURRENTCGPA}}</td>
+                                <td data-label="HISTORY OF BACKLOGS">{{printArrear this.HISTORY_OF_ARREARS}}</td>
+                                <td data-label="NO OF STANDING BACKLOGS">{{printArrear this.NO_OF_STANDINGARREARS}}</td>
+                                <td data-label="SALARY">{{this.SALARY}}</td>
+                                <td data-label="ABOUT">{{this.ABOUT}}</td>
+                                <td data-label="VENUE">{{this.VENUE}}</td>
+                            </tr>
+                             {{/each}}
+                        </tbody>   
+
+                    </table>
+                </div>    
+               
+                 <!--on going drives title  -->
+
+                <div class="manage2">
+                    <div class="title2">
+                          <i class="fa-solid fa-play"></i>
+                          <span class="text2">Ongoing Drives</span>
+                    </div>
+                </div>
+                <!--on going drives title  -->
+                <!-- on going drive table-->
+                <div class="table-container">
+                    <table class="tab">
+                        <thead id="ongoing">
+                            <tr>
+                                <th>S.NO</th>
+                                <th>COMPANYNAME</th>
+                                <th>DRIVE DATE</th>
+                                <th>ELIGIBLE DEPARTMENTS</th>
+                                <th>MARKS_10TH</th>
+                                <th>MARKS_12TH</th>
+                                <th>CGPA</th>
+                                <th>HISTORY OF BACKLOGS</th>
+                                <th>NO OF STANDING BACKLOGS</th>
+                                <th>SALARY</th>
+                                <th>DETAILS</th>
+                                <th>VENUE</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {{#each onresult}}   
+                            <tr>
+                                <td data-label="S.NO">{{this.SNO}}</td>
+                                <td data-label="COMPANYNAME">{{this.COMPANY_NAME}}</td>
+                                <td data-label="DRIVEDATE">{{this.DRIVE_DATE}}</td>
+                                <td data-label="ELIGIBLE DEPARTMENTS">{{printDepartment this.DEPARTMENT}}</td>
+                                <td data-label="MARKS_10TH">{{printMark this.MARKS_10TH}}</td>
+                                <td data-label="MARKS_12TH">{{printMark this.MARKS_12TH}}</td>
+                                <td data-label="CGPA">{{printMark this.CURRENTCGPA}}</td>
+                                <td data-label="HISTORY OF BACKLOGS">{{printArrear this.HISTORY_OF_ARREARS}}</td>
+                                <td data-label="NO OF STANDING BACKLOGS">{{printArrear this.NO_OF_STANDINGARREARS}}</td>
+                                <td data-label="SALARY">{{this.SALARY}}</td>
+                                <td data-label="ABOUT">{{this.ABOUT}}</td>
+                                <td data-label="VENUE">{{this.VENUE}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>    
+
+                    </table>
+                </div> 
+
+
+                <!-- on going drive table-->
+                <!-- past drives title  -->
+
+                <div class="manage2">
+                    <div class="title2">
+                          <i class="fa-solid fa-backward"></i>
+                          <span class="text2">Past Drives</span>
+                    </div>
+                </div>
+                
+                <!--past drives title  -->
+                <!-- past drive table-->
+                <div class="table-container">
+                    <table class="tab">
+                        <thead id="past">
+                            <tr>
+                                <th>S.NO</th>
+                                <th>COMPANYNAME</th>
+                                <th>DRIVE DATE</th>
+                                <th>ELIGIBLE DEPARTMENTS</th>
+                                <th>MARKS_10TH</th>
+                                <th>MARKS_12TH</th>
+                                <th>CGPA</th>
+                                <th>HISTORY OF BACKLOGS</th>
+                                <th>NO OF STANDING BACKLOGS</th>
+                                <th>SALARY</th>
+                                <th>DETAILS</th>
+                                <th>VENUE</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        {{#each pastresult}}   
+                            <tr>
+                                <td data-label="S.NO">{{this.SNO}}</td>
+                                <td data-label="COMPANYNAME">{{this.COMPANY_NAME}}</td>
+                                <td data-label="DRIVEDATE">{{this.DRIVE_DATE}}</td>
+                                <td data-label="ELIGIBLE DEPARTMENTS">{{printDepartment this.DEPARTMENT}}</td>
+                                <td data-label="MARKS_10TH">{{printMark this.MARKS_10TH}}</td>
+                                <td data-label="MARKS_12TH">{{printMark this.MARKS_12TH}}</td>
+                                <td data-label="CGPA">{{printMark this.CURRENTCGPA}}</td>
+                                <td data-label="HISTORY OF BACKLOGS">{{printArrear this.HISTORY_OF_ARREARS}}</td>
+                                <td data-label="NO OF STANDING BACKLOGS">{{printArrear this.NO_OF_STANDINGARREARS}}</td>
+                                <td data-label="SALARY">{{this.SALARY}}</td>
+                                <td data-label="ABOUT">{{this.ABOUT}}</td>
+                                <td data-label="VENUE">{{this.VENUE}}</td>
+                            </tr>
+                        {{/each}}
+                        </tbody>    
+
+                    </table>
+                </div> 
+                <!-- past drive table-->
+            </section>
+
+            <script src="/darkmode.js"></script>
+            <script src="/image_slide.js"></script>   
+
+    </body>
+</html>

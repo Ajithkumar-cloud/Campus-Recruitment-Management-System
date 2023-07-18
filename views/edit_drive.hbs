@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <!----------------------CSS SIDE DASHBOARD LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/add_drive.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+    </head>
+    <body>
+          <!--====================Side Nav bar starting======================-->
+            {{> admin_navbar}}
+           <!--===========Nav bar ending ===========-->
+            <!--setup navigation bar-->
+        <section class="dashboard">
+                <div class="top">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="setupbar">
+                    <div class="thingsbar">
+                        <div class="set-link">
+                             <i class="fa-brands fa-windows"></i>
+                             <a class="navtext" href=""><span>Back to Home</span></a>
+                        </div>
+                        <div class="set-link">
+                             <i class="fas fa-sign-out-alt"></i>
+                             <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                        </div>
+                        <div class="user-img">
+                            <span class="userimg-design">
+                                <i class="fa-solid fa-user"></i>
+                            </span>   
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class="manage">
+                    <div class="title">
+                        <i class="fa-regular fa-pen-to-square"></i>
+                        <span class="text">Edit Drive Details</span>
+                    </div>
+                    <!-- insert msg-->
+                    {{#if msg}}
+                    <div class="alert">
+                        {{msg}}
+                    </div>
+                    {{/if}}
+                    <!-- insert msg-->
+                    <!-- VALUE ATTRIBUTE USED TO SET BACK GIVEN DETAILS -->
+                    <!-- for each loop iterate to set value back-->
+                    {{#each result}}
+                    <form method="POST" action="/auth/edit_drive/{{this.SNO}}">
+                        
+                        <label class="cotext">Enter Company Name: *</label>
+                        <div class="input-field">
+                            <input type="text" name="companyname" value="{{this.COMPANY_NAME}}">
+                        </div>
+                        
+                        <label class="cotext">Drive Date: *</label>
+                        <div class="date-field">
+                            <input type="date" name="date" value="{{this.DRIVE_DATE}}">
+                        </div>
+
+                        {{!-- <label class="cotext">Eligibility Details: *</label>  
+                        <div class="medium-field">
+                            <textarea  cols="50"  rows="5"name="eligibility" >{{this.ELIGIBILITY}}</textarea>
+
+                        </div> --}}
+                        <div class="eligible-field">
+
+                            <div class="select-field">
+                                <label class="sotext">Department: *</label>  
+                                <select name="depart" multiple id="ml">
+                                    <option name="CSE"value="1">CSE</option>
+                                    <option name="IT" value="2">IT</option>
+                                    <option name="ECE"value="3">ECE</option>
+                                    <option name="BIO"value="4">BIO</option>
+                                    <option name="MECH"value="5">MECH</option>
+                                    <option name="CIVIL"value="6">CIVIL</option>     
+                                </select>
+                            </div>
+                            <div class="child-field">
+                                 <label class="sotext">10th :*</label>
+                                 <input type="text"name="ten" value="{{this.MARKS_10TH}}">
+                            </div>
+                            <div class="child-field">
+                                 <label class="twel-text">12th :*</label>
+                                 <input type="text" name="twel" value="{{this.MARKS_12TH}}">
+                            </div>
+                             <div class="child-field">
+                                  <label class="cgpa-text">CGPA:*</label>
+                                  <input type="text" name="cgpa" value="{{this.CURRENTCGPA}}">  
+                            </div>
+                            <div class="history-field">
+                                  <label class="his-text">History of Backlogs :*</label>
+                                  <input type="text" name="history" value="{{this.HISTORY_OF_ARREARS}}">  
+                            </div>
+                            <div class="history-field">
+                                 <label class="sta-text">No of Standing Backlogs :*</label>
+                                 <input type="text" name="standing" value="{{this.NO_OF_STANDINGARREARS}}">
+                            </div>
+                        </div>
+
+                        <label class="cotext">Enter Salary Details: *</label>
+                        <div class="medium-field">
+                            <textarea cols="50" rows="5"name="salary" >{{this.SALARY}}</textarea>
+                        </div>
+
+                        <label class="cotext">About: *</label>
+                        <div class="big-field">
+                            <textarea cols="50" rows="9"name="about">{{this.ABOUT}}</textarea>
+                        </div>
+
+                        <label class="cotext">Venue: *</label>
+                        <div class="input-field">
+                            <input type="text" name="venue" value="{{this.VENUE}}">
+                        </div>
+
+                         <div class="saveback">
+                            <div class="field-button">
+                                <button type="submit">Save Changes</button>
+                            </div>
+                            <div class="backbutton">
+                               <button type="button"><a class="back" href="/manage_drive">Back</a></button> 
+                            </div>
+                        </div>
+                    </form>
+                    {{/each}}
+
+                </div>
+
+        </section> 
+        <script src="/darkmode.js"></script>
+        <script>
+            const multiSelectWithoutCtrl = ( elemSelector ) => {
+                let options = [].slice.call(document.querySelectorAll(`${elemSelector} option`));
+                options.forEach(function (element) {
+                    element.addEventListener("mousedown", 
+                    function (e) {
+                        e.preventDefault();
+                        element.parentElement.focus();
+                        this.selected = !this.selected;
+                        return false;
+                    }, false );
+                });
+            }
+
+            multiSelectWithoutCtrl("#ml");
+            //edit page restores selected options
+           
+            var v = "{{result.[0].DEPARTMENT}}";
+            
+            var element = document.getElementById("ml");
+            var len = element.options.length;
+            let store;
+         
+            while(v>0)
+            {       store = v % 10;
+                    element.options[store-1].selected = true;
+                    v = Math.floor(v/10);
+            }
+        </script>
+    </body>      
+</html>    

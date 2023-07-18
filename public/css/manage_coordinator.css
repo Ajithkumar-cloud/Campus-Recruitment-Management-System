@@ -1,0 +1,149 @@
+:root{
+    /* ====colors====*/
+    --current-text: #fff;
+    --current-select : royalblue;
+    --mybg-color:rgba(226, 232, 232, 0.858);
+    --primary-color: #0E4BF1;
+    --panel-color: #fff;
+    --text-color: #000;
+    --black-light-color: #3e3a3a;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #E7D1FC;
+    --box2-color: #FFE6AC;
+    --box3-color: #4DA3FF;
+    --title-icon-color: #fff;
+    
+    /*========= transition ========*/
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+body.dark{
+    
+   --current-text: #000;
+   --current-select : #fff;
+   --mybg-color:#242526;
+   --primary-color: #3A3B3C;
+   --panel-color: #242526;
+   --text-color: #CCC;
+   --black-light-color: #CCC;
+   --border-color: #4D4C4C;
+   --toggle-color: #FFF;
+   --box1-color: #3A3B3C;
+   --box2-color: #3A3B3C;
+   --box3-color: #3A3B3C;
+   --title-icon-color: #CCC;
+   transition: var(--tran-03);
+}
+.dashboard .manage{
+    
+    height: 35px;
+    padding-left: 10px;
+    justify-content: center;
+}
+.manage .title{
+    display: flex;
+    align-items: center;
+    margin : 40px 0 15px 0;
+}
+.manage .title i{
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.manage .title .text{
+
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.dashboard .create{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: #F8FAFD;
+    height: 30px;
+    width : auto;
+    padding: 5px 5px 5px 0px;
+    border-top: 1px solid rgba(210,217,231,.6);
+    border-bottom: 1px solid rgba(210,217,231,.6);
+}
+.create .acc{
+    text-decoration: none;
+    color: #000;
+}
+.create .acc:hover{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.dashboard .table_container{
+    margin-top: 20px;
+    height: auto;
+    padding-left: 10px;
+    width: auto;
+}
+.dashboard .table_container .table{
+    width: 60%;
+    margin-top: 10px;
+    padding: 10px;
+    border-collapse: collapse;
+    background-color: rgba(250, 250, 250, 0.849);
+}
+.dashboard .table td{
+    border-bottom: 2px solid rgba(210,217,231,.6);
+    padding: 15px;
+}
+.dashboard .table thead td{
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+}
+.dashboard .table thead{
+    border-radius : 4px 4px 0 0;
+}
+.dashboard .table_container span{
+  font-family: sans-serif;
+  font-size: 19px;
+}
+.edit{
+    color: var(--current-select);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+.edit i{
+    height: 5px;
+    width: 5px;
+}
+.delete{
+    color: red;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+}
+.delete i{
+    height: 5px;
+    width: 5px;
+}
+ /* admin manaeg placement current select color*/
+ #manage_coordinator{
+    background-color: var(--current-select);
+}
+#manage_coordinatoricon{
+ color: var(--current-text);
+}
+#manage_coordinatorcolor{
+ color: var(--current-text);
+}

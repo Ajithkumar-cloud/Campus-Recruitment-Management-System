@@ -1,0 +1,313 @@
+:root{
+    /* ====colors====*/
+    --current-text: #fff;
+    --current-select : royalblue;
+    --mybg-color:rgba(226, 232, 232, 0.858);
+    --primary-color: #0E4BF1;
+    --panel-color: #fff;
+    --text-color: #000;
+    --black-light-color: #3e3a3a;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #E7D1FC;
+    --box2-color: #FFE6AC;
+    --box3-color: #4DA3FF;
+    --title-icon-color: #fff;
+    
+    /*========= transition ========*/
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-02: all 0.2s ease;
+}
+body.dark{
+    
+   --current-text: #000;
+   --current-select : #fff;
+   --mybg-color:#242526;
+   --primary-color: #3A3B3C;
+   --panel-color: #242526;
+   --text-color: #CCC;
+   --black-light-color: #CCC;
+   --border-color: #4D4C4C;
+   --toggle-color: #FFF;
+   --box1-color: #3A3B3C;
+   --box2-color: #3A3B3C;
+   --box3-color: #3A3B3C;
+   --title-icon-color: #CCC;
+   transition: var(--tran-03);
+}
+.dashboard .manage{
+    
+    height: 35px;
+    padding-left: 10px;
+    justify-content: center;
+    background-color: #F8FAFD;
+}
+.manage .title{
+    display: flex;
+    align-items: center;
+    margin : 40px 0 15px 0;
+}
+.manage .title i{
+
+    position: relative;
+    height: 30px;
+    width: 30px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.manage .title .text{
+
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* display drive start*/
+.dashboard .drive{
+    width: 99%;
+    height: 230px;
+    overflow-x:auto;
+    overflow-y: auto;
+    margin: 30px auto auto 10px;
+}
+.drive table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.drive table thead tr th{
+    font-size: 17px;
+    font-family: sans-serif;
+    letter-spacing: 0.35px;
+    color: #fff;
+    padding: 15px;
+    background-color: black;
+    border-bottom: 2px solid rgba(210,217,231,.6);
+    text-align: center;
+}
+.drive table tbody tr td{
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid rgba(210,217,231,.6);
+}
+
+/* display drive end*/
+
+/* shortlist form design starts here*/
+.dashboard .form-top{
+    height: 70px;
+    margin-top: 0px;
+    padding-top: 5px;
+}
+.form-top .form-mid{
+    height: 300px;
+}
+.form-top .form-mid form{
+    display: flex;
+    height: 70px;
+}
+.form-top form .input-field,.history-field{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding: 5px 15px 5px 1px;  
+}
+form .input-field input{
+   height: 25px;
+   width: 70px;
+   font-size: 15px;
+   border-radius: 3px;
+   border: 1px solid silver;
+   opacity: 0.8;
+   outline: none;
+   color: rgb(18, 16, 16);
+   padding: 0 10px;
+}
+form .input-field input:focus,.history-field input:focus{
+    border: 1.5px solid rgb(47, 99, 255); 
+    background-color: white;
+}
+form .history-field input{
+    height: 25px;
+    width: 100px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid silver;
+    opacity: 0.8;
+    outline: none;
+    color: rgb(18, 16, 16);
+    padding: 0 10px;
+ }
+form .input-field select{
+    height: 28px;
+    width: 150px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: 1px solid silver;
+    opacity: 0.8;
+    outline: none;
+    color: rgb(18, 16, 16);
+    padding: 0 5px;
+}
+.input-field select:focus{
+    border-color: royalblue;
+ }
+.input-field select:hover{
+   color: #333;
+}
+form .button-field{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    outline: none;
+   
+}
+form .button-field input[type="submit"]{
+    margin-top: 25.5px;
+    width: 120px;
+    height: 30px;
+    cursor: pointer;
+    line-height: 25px;
+    background-color:royalblue;
+    color: rgba(255, 255, 255, 0.893);
+    border-radius: 3px;
+    outline: #4a4a4a;
+    border: 1px solid royalblue;
+}
+form .button-field input[type="submit"]:hover{
+    background-color: rgb(43, 95, 250);
+}
+.select-text,.ten-text,.twel-text,
+.cgpa-text,.his-text,.sta-text{
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 5px 0px;
+}
+/* shortlist form design ends here*/
+/* table design starts here*/
+.dashboard .table-container{
+   
+   width: 99%;
+   height: 500px;
+   overflow-y: auto;
+   overflow-x: auto;
+   margin: 20px auto auto 10px;
+
+}
+.table-container .table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table thead tr th{
+    font-size: 17px;
+    font-family: sans-serif;
+    letter-spacing: 0.35px;
+    color: #fff;
+    padding: 15px;
+    background-color: #0E4BF1;
+    border-bottom: 2px solid rgba(210,217,231,.6);
+  
+}
+.table tbody tr td{
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 15px;
+    border-bottom: 2px solid rgba(210,217,231,.6);
+    background-color: #fff; 
+}
+/* note text */
+.note{
+    height: 20px;
+    width: auto;
+    color: green;
+    margin-left: 10px;
+    padding: 10px 10px 10px 10px;
+    margin-top: 10px;
+}
+
+/* note text */
+.error{
+    color: red;
+    margin-left: 10px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.dashboard .update{
+    margin: 30px auto 30px 10px;
+    height: 200px;
+}
+.update .done{
+    color: green;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+.update table{
+    padding-left: 10px;
+}
+.update table tr td{
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 10px;
+    color: var(--text-color);
+}
+.update table tr .short{
+    color : green;
+    font-weight: bold;
+}
+.download{
+    margin: 0px 0px 30px 30px;
+    background-color: royalblue;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+}
+.download .down{
+    color: #fff;
+    text-decoration: none;
+}
+.dashboard .term{
+    height: 100px;
+    margin: 10px auto auto 10px;
+    padding-left: 10px;
+}
+.term .but{
+    height: 30px;
+    margin-left: 10px;
+    padding: 10px 20px 10px 20px;
+}
+.term a.but{
+
+    background-color: royalblue;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+.term span{
+    font-size: 17px;
+    font-family: sans-serif;
+}
+.term input{
+    cursor: pointer;
+}
+.term .disabled-link {
+    pointer-events: none;
+    height: 30px;
+    margin-left: 10px;
+    padding: 10px 20px 10px 20px;
+}
+.term a.disabled-link{
+    background-color: gray;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}

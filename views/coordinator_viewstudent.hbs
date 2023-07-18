@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+
+        <!----------------------COORDINATOR CSS LINKING ONLY DASHBOARD DESIGN MAIN------------------->
+        <link rel="stylesheet" type="text/css" href="/css/coordinator_sidedash.css">
+
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/coordinator_viewstudent.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+    </head>
+
+    <body>
+
+        <!-- coordinator side navbar starting-->
+        {{> co_navbar}}
+
+        <!-- coordinator side navbar ending-->
+
+        <!--setup navigation bar starting-->
+        <section class="dashboard">
+            <div class="top">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="setupbar">
+                <div class="thingsbar">
+                    <div class="set-link">
+                        <i class="fa-brands fa-windows"></i>
+                        <a class="navtext" href=""><span>Back to Home</span></a>
+                    </div>
+                    <div class="set-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a class="navtext"href="/auth/coordinator_logout"><span>Logout</span></a>
+                    </div>
+                    <div class="user-img">
+                        <span class="userimg-design">
+                            <i class="fa-solid fa-user"></i>
+                        </span>   
+                        
+                    </div>
+                </div>
+            </div>
+            <!--setup navigation bar end-->
+            
+            <!-- title heading start-->
+            <div class="manage">
+                <div class="title">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="text">View Student List</span>
+                </div>
+            </div>  
+
+            <!-- title heading end-->
+
+
+            <!-- this is for error msg please select dep-->
+            {{#if msg}}
+                <p class="{{msg_type}}">{{msg}}</p>
+            {{/if}}
+            <!-- this is for error msg please select dep-->
+
+            <!-- starting form-->
+            <div class="form-top">
+                <div class="form-mid">
+                    <form id="myform" method="POST" action="/auth/coordinator_viewstudentlist">
+
+                           <!--  Batch option now disabled
+                            <div class="input-field">
+                                <label class="select-text">Select Batch: *</label>
+                                <select name="batch">
+                                    <option><label>Choose your dep</label></option>
+                                    <option name=""value="1">2019-2023</option>
+                                    <option name=""value="3">2020-2024</option>
+                                    <option name="" value="2">2021-2025</option>
+                                    <option name=""value="4">2022-2026</option>
+                                    <option name=""value="5">2023-2027</option>
+                                    <option name=""value="6">2024-2028</option>
+                                </select>
+                            </div>     Batch option now disabled    -->
+
+                        <div class="input-field">
+                            <label class="select-text">Select Department: *</label>
+                            <select id="default"name="department">
+                                <option value="0" selected disabled hidden><label>Choose your dep</label></option>
+                                <option name="CSE"value="1">CSE</option>
+                                <option name="ECE"value="3">ECE</option>
+                                <option name="IT" value="2">IT</option>
+                                <option name="BIO"value="4">BIO</option>
+                                <option name="MECH"value="5">MECH</option>
+                                <option name="CIVIL"value="6">CIVIL</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label class="ten-text">10th :*</label>
+                            <input type="text"name="ten_start" value="{{details.ten_start}}">
+                            <label class="ten-text2">to</label>
+                            <input type="text"name="ten_end" value="{{details.ten_end}}">
+                        </div>
+                        <div class="input-field">
+                            <label class="twel-text">12th :*</label>
+                            <input type="text" name="twel_start" value="{{details.twel_start}}">
+                            <label class="twel-text2">to</label>
+                            <input type="text" name="twel_end" value="{{details.twel_end}}">
+                        </div>
+                        <div class="input-field">
+                            <label class="cgpa-text">CGPA:*</label>
+                            <input type="text" name="cgpa_start" value="{{details.cgpa_start}}">
+                            <label class="cgpa-text2">to</label>
+                            <input type="text" name="cgpa_end" value="{{details.cgpa_end}}">  
+                        </div>
+                        <div class="history-field">
+                            <label class="his-text">History of Backlogs :*</label>
+                            <input type="text" name="history_start" value="{{details.history_start}}"> 
+                            <label class="his-text2">to</label>
+                            <input type="text" name="history_end" value="{{details.history_end}}"> 
+                        </div>
+                        <div class="history-field">
+                            <label class="sta-text">No of Standing Backlogs :*</label>
+                            <input type="text" name="standing_start" value="{{details.standing_start}}">
+                            <label class="sta-text2">to</label>
+                            <input type="text" name="standing_end" value="{{details.standing_end}}">
+                        </div> 
+
+                        <div class="button-field">
+                            <input type="submit" value="View">
+                        </div>    
+
+                    </form>
+                </div>
+
+            </div>
+            <!-- ending form-->
+
+
+            <!-- table student list-->
+            <div class="table-container">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>NAME</th>
+                                <th>REGNO</th>
+                                <th>EMAIL</th>
+                                <th>PHONE_NUMBER</th>
+                                <th>GENDER</th>
+                                <th>DATEOFBIRTH</th>
+                                <th>DEPARTMENT</th>
+                                <th>FATHER_NAME</th>
+                                <th>MOTHER_NAME</th>
+                                <th>PARENT_PHONENUMBER</th>
+                                <th>10TH</th>
+                                <th>12TH</th>
+                                <th>CURRENTCGPA</th>
+                                <th>NO_OF_STANDINGARREARS</th>
+                                <th>HISTORY_OF_ARREARS</th>
+                                <th>ADDRESS</th>       
+                            </tr>        
+                        </thead>
+                        <tody>
+                            {{#each list}}
+                            <tr>
+                                <td>{{this.NAME}}</td>
+                                <td>{{this.REGNO}}</td>
+                                <td>{{this.EMAIL}}</td>
+                                <td>{{this.PHONE_NUMBER}}</td>
+                                <td>{{this.GENDER}}</td>
+                                <td>{{changeDateFormat this.DATEOFBIRTH}}</td>
+                                <td>{{compare this.DEPARTMENT}}</td>
+                                <td>{{this.FATHER_NAME}}</td>
+                                <td>{{this.MOTHER_NAME}}</td>
+                                <td>{{this.PARENT_PHONENUMBER}}</td>
+                                <td>{{this.MARKS_10TH}}</td>
+                                <td>{{this.MARKS_12TH}}</td>
+                                <td>{{this.CURRENTCGPA}}</td>
+                                <td>{{this.NO_OF_STANDINGARREARS}}</td>
+                                <td>{{this.HISTORY_OF_ARREARS}}</td>
+                                <td>{{this.ADDRESS}}</td>
+                            </tr>
+                            {{/each}}
+                                
+                        </tody>       
+                    </table>
+
+                </div>
+            </div>
+            <!-- table student view list end-->
+
+        </section>
+
+    </body>
+    <script>
+        document.getElementById("default").value = "{{details.department}}";
+    </script>
+
+    <script src="/darkmode.js"></script>
+
+</html>

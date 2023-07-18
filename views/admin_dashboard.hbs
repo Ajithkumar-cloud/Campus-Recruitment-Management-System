@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+         
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+         <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+        <!----------------------ADMIN CSS LINKING ONLY DASHBOARD DESIGN MAIN------------------->
+        <link rel="stylesheet" type ="text/css" href="/css/admin_dashboard.css">
+        
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+    </head>
+    <body>
+
+          <!--====================Side Nav bar starting======================-->
+            {{> admin_navbar}}
+           <!--===========Nav bar ending ===========-->
+
+           <!--setup navigation bar-->
+           <section class="dashboard">
+                <div class="top">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="setupbar">
+                    <div class="thingsbar">
+                        <div class="set-link">
+                             <i class="fa-brands fa-windows"></i>
+                             <a class="navtext" href=""><span>Back to Home</span></a>
+                        </div>
+                        <div class="set-link">
+                             <i class="fas fa-sign-out-alt"></i>
+                             <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                        </div>
+                        <div class="user-img">
+                            <span class="userimg-design">
+                                <i class="fa-solid fa-user"></i>
+                            </span>   
+                        
+                        </div>
+                    </div>
+                </div>
+
+            <!--setup navigation bar-->
+            <!-- dashboard starting.....admin css design file start-->
+                <div class="dash-content">
+                    <div class="overview">
+                        <div class="title">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <span class="text">Dashboard</span>
+                        </div>
+
+                        <div class="boxes">
+                            <div class="box box1">
+                                <i class="fa-regular fa-building"></i>
+                                    <span class="text">
+                                        <p>Total Number of</p>
+                                        <p>Companies</p>
+                                    </span>
+                                    <span class="number">{{drives.length}}</span>
+                            </div>
+                 
+                            <div class="box box2">
+                                <i class="fa-regular fa-circle-check"></i>
+                                    <span class="text">
+                                        <p>Total Number of</p>
+                                        <p>Placed Students</p>
+                                    </span>
+                                    <span class="number">{{placed.length}}</span>
+                            </div>
+            
+              
+                            <div class="box box3">
+                                <i class="fa-solid fa-users"></i>
+                                    <span class="text">
+                                        <p>Total Number of</p>
+                                        <p>Students</p>
+                                    </span>
+                                    <span class="number">{{students.length}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="activity">
+                        <div class="title">
+                            <i class="fa-regular fa-clock"></i>
+                            <span class="text">Recent Placed Students</span>
+                            <span class="viewtext"><a href="/admin_viewplacedstudents">View Placed Students</a></span>
+                        </div>
+
+                        <div class="activity-data">
+                            <div class="data names"> 
+                                <span class="data-title">NAME</span>
+                                <span class="data-list">NithishKumar</span>
+                                <span class="data-list">Dineshbabu</span>
+                                <span class="data-list">Anandakrishnan</span>
+                                <span class="data-list">Barichith</span>
+                                <span class="data-list">Gurusheth</span>
+                                <span class="data-list">AhmedIbrahim</span>
+                                <span class="data-list">Gokul</span>
+                            </div>
+                            <div class="data email">
+                                <span class="data-title">EMAIL</span>
+                                <span class="data-list">nithishkumar98@gmail.com</span>
+                                <span class="data-list">dineshbabu14@gmail.com</span>
+                                <span class="data-list">anandkrishnan08@gmail.com</span>
+                                <span class="data-list">barichith0909@gmail.com</span>
+                                <span class="data-list">gurusheth702@gmail.com</span>
+                                <span class="data-list">ahmedibrahim0808@gmail.com</span>
+                                <span class="data-list">npgokul2001@gmail.com</span>
+                                
+                            </div>
+                            <div class="data company">
+                                <span class="data-title">COMPANY</span>
+                                <span class="data-list">CTS</span>
+                                <span class="data-list">ASPIRE</span>
+                                <span class="data-list">CTS</span>
+                                <span class="data-list">CONCENTRIX</span>
+                                <span class="data-list">TCS</span>
+                                <span class="data-list">ZOHO</span>
+                                <span class="data-list">ZOHO</span>   
+                            </div>
+                            <div class="data package">
+                                <span class="data-title">PACKAGE</span>
+                                <span class="data-list">4.0LPA</span>
+                                <span class="data-list">3.5LPA</span>
+                                <span class="data-list">4.0LPA</span>
+                                <span class="data-list">5.0LPA</span>
+                                <span class="data-list">3.2LPA</span>
+                                <span class="data-list">8.5LPA</span>
+                                <span class="data-list">8.5LPA</span>
+                            </div>
+                            <div class="data dep">
+                                <span class="data-title">DEPARTMENT</span>
+                                <span class="data-list">CSE</span>
+                                <span class="data-list">ECE</span>
+                                <span class="data-list">CSE</span>
+                                <span class="data-list">CSE</span>
+                                <span class="data-list">BIO</span>
+                                <span class="data-list">CSE</span>
+                                <span class="data-list">IT</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                
+            <!--dashboard end-->
+
+
+           </section>
+
+
+
+
+        <script src="/darkmode.js"></script>
+    </body>
+
+</html>

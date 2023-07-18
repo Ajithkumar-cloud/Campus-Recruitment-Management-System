@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="/css/navbar.css"> <!-- navbar css link-->
+        <link rel="stylesheet" type="text/css" href="/css/footer.css"> <!-- footer css link-->
+        <link rel="stylesheet" type="text/css" href="/css/coordinator_login.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+    </head>
+    <body style="background-color: rgba(226, 232, 232, 0.753);">
+
+         <!-- nav bar starting -->
+        {{> navbar }}
+   
+        <!-- nav bar ending with campus picture-->
+
+        <!-- coordinator login page start -->
+        
+        <div class="top">
+            <div class="heading">   
+                <h3>COORDINATOR LOGIN</h3>
+                {{#if msg}}
+                <span class="{{msg_type}}">{{msg}}</span>
+                {{/if}}
+            </div>
+            <div class="mid-form">
+                <form action="/auth/coordinator_login" method="POST">
+                    <label class="regtext">Enter Your Id: *</label>
+                    <div class="input-field">
+                        <i class="fa-regular fa-id-card"></i>
+                        <input type="text" name="co_regno">
+                    </div>
+                     <div class="ey-icon">
+                          <label class="passtext">Enter Your Password: *</label>
+                          <i id="access" class="fa-solid fa-eye-slash" ></i>
+                     </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <label class="selecttext">Select Your Department: *</label>
+                    <div class="select-field">
+                        <select name="dep">
+                            <option selected disabled hidden><label>Choose your dep</label></option>
+                            <option name="CSE"value="1"><label>CSE</label></option>
+                            <option name="ECE"value="3"><label>ECE</label></option>
+                            <option name="IT"value="2"><label>IT</label></option>
+                            <option name="BIO"value="4"><label>BIO</label></option>
+                            <option name="MECH"value="5"><label>MECH</label></option>  
+                            <option name="CIVIL"value="6"><label>CIVIL</label></option>           
+                        </select>
+                    </div>
+                    <div class="button-field">
+                        <button type="submit">Login</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- coordinator login page end -->
+
+        <!-- footer page starting -->
+        <footer class="foot">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4 >Navigation</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="">Student Login</a></li>
+                                <li><a href="">Placement Login</a></li>
+                                <li><a href="">Hod Login</a></li>    
+                            </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>More</h4>
+                            <ul>
+                                <li><a href="">Placement Details</a></li>
+                                <li><a href="">Recruiters</a></li>
+                                <li><a href="">Training Details</a></li>
+                                <li><a href="">Contact Us</a></li>
+
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get In Touch</h4>
+                            <ul>
+                                <li>Sethu Institute of Technology</li>
+                                <li>Kariapatti</li>
+                                <li>Contact</li>   
+                                <li>0452-101001</li> 
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
+                            <div class="social">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
+
+
+        <!-- footer page ending -->
+
+        <script src="/co_passeye.js"></script>
+        <script>
+
+        </script>
+    </body>
+
+
+</html>

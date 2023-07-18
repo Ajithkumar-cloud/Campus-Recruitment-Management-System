@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <!----------------------CSS SIDE DASHBOARD LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/shortlist_drive.css">
+
+         <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+
+    </head>
+    <body>
+         <!--====================Side Nav bar starting======================-->
+            {{> co_navbar}}
+         <!--===========Nav bar ending ===========-->
+
+          <!--setup navigation bar-->
+           <section class="dashboard">
+                <div class="top">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="setupbar">
+                    <div class="thingsbar">
+                        <div class="set-link">
+                             <i class="fa-brands fa-windows"></i>
+                             <a class="navtext" href=""><span>Back to Home</span></a>
+                        </div>
+                        <div class="set-link">
+                             <i class="fas fa-sign-out-alt"></i>
+                             <a class="navtext"href="/auth/coordinator_logout"><span>Logout</span></a>
+                        </div>
+                        <div class="user-img">
+                            <span class="userimg-design">
+                                <i class="fa-solid fa-user"></i>
+                            </span>   
+                        
+                        </div>
+                    </div>
+                </div>
+                <!--setup navigation bar end-->
+                <div class="manage">
+                    <div class="title">
+                        <i class="fa-solid fa-filter"></i>
+                        <span class="text">Shortlist Drives</span>
+                    </div>
+                </div>  
+
+                <!--shortlist drive table start -->
+                <div class="table-container">
+                    <div class="table"> 
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>S.NO</th>
+                                    <th>COMPANYNAME</th>
+                                    <th>DRIVE DATE</th>
+                                    <th>ELIGIBLE DEPARTMENTS</th>
+                                    <th>MARKS_10TH</th>
+                                    <th>MARKS_12TH</th>
+                                    <th>CGPA</th>
+                                    <th>HISTORY OF BACKLOGS</th>
+                                    <th>NO OF STANDING BACKLOGS</th>
+                                    <th>OPTIONS</th>
+                                </tr>
+                           </thead>
+                          
+                           <tbody>
+                           {{#each result}}
+                                <tr>
+                                    <td>{{this.SNO}}</td>
+                                    <td>{{this.COMPANY_NAME}}</td>
+                                    <td>{{this.DRIVE_DATE}}</td>
+                                    <td>{{printDepartment this.DEPARTMENT}}</td>
+                                    <td>{{printMark this.MARKS_10TH}}</td>
+                                    <td>{{printMark this.MARKS_12TH}}</td>
+                                    <td>{{printMark this.CURRENTCGPA}}</td>
+                                    <td>{{printArrear this.HISTORY_OF_ARREARS}}</td>
+                                    <td>{{printArrear this.NO_OF_STANDINGARREARS}}</td>
+
+                                    {{#if (checkCoordinatorDepartment this.DEPARTMENT ../coordinator.DEPARTMENT)}}
+                                    <td><a class="sort-button"href="/auth/eligibility_criteria/{{this.SNO}}/{{../coordinator.DEPARTMENT}}">Shortlist</a></td>
+                                    {{else}}
+                                    <td><button class="no-button"type="disabled">Not Eligible</button></td>
+                                    {{/if}}
+                                </tr>
+                           {{/each}}    
+                           </tbody>
+                        </table>
+                        
+                    </div>
+                </div>
+
+
+
+                <!--shortlist drive table end -->
+            </section>
+            <script src="/darkmode.js"></script>
+    </body>
+
+</html>

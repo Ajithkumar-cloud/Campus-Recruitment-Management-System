@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Campus Recruitment</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/login.css">
+        <link rel="stylesheet" type="text/css" href="/css/footer.css"> <!-- footer css link-->
+        <link rel="stylesheet" type="text/css" href="/css/navbar.css"> <!-- navbar css link-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  
+        
+
+    </head>
+    <body style="background-color: rgba(226, 232, 232, 0.753)";>
+        <!-- nav bar starting -->
+        
+        {{> navbar }}
+        <!-- nav bar ending with campus picture-->
+
+        <!--Login page string -->  
+        
+        <div class="top-notch">  
+            <div class="middle-notch">
+       <!--        <div class="form-login"> --> 
+                    <h2>STUDENT LOGIN</h2>
+                    <span class="msgbox">
+                        {{#if msg}}
+                        <p class="{{msg_type}}">{{msg}}</p>
+                        {{/if}}
+                    </span>  
+                    <form action="/auth/login" method="post">
+                        <div class="input-field">
+                            <label class="t-title">Phonenumber or Regno: *</label><br>
+                            <input type="text" name="regno" id="number" required>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <label class="t-title">Password: *</label><br>  
+                            <input type="password" name="password" id="password"class="password">
+                            <i class="fa-solid fa-lock"></i>
+                            <i id="access"class="fa-solid fa-eye-slash"></i>
+                        </div>
+                        <div class="field-button">
+                            <input type="submit" value="LOGIN" style="font-size: 13.5px;border: 1.5px solid royalblue">   
+                        </div>
+                       
+                        <a href="" class="text">Forgot Password?</a>
+                        <p class="sign-text">  
+                            <label>Don't have an account</label>
+                            <a href="/signup">Sign Up</a> 
+                        </p>
+                        
+                               
+
+                    </form>
+                 
+                  
+      <!--      </div> -->  
+            </div>
+             
+            
+        </div>
+             
+  
+    
+
+<!--this is footer part and another css footer part will be linked-->
+        <footer class="foot">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4 >Navigation</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="">Student Login</a></li>
+                                <li><a href="">Placement Login</a></li>
+                                <li><a href="">Hod Login</a></li>    
+                            </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>More</h4>
+                            <ul>
+                                <li><a href="">Placement Details</a></li>
+                                <li><a href="">Recruiters</a></li>
+                                <li><a href="">Training Details</a></li>
+                                <li><a href="">Contact Us</a></li>
+
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get In Touch</h4>
+                            <ul>
+                                <li>Sethu Institute of Technology</li>
+                                <li>Kariapatti</li>
+                                <li>Contact</li>   
+                                <li>0452-101001</li> 
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
+                            <div class="social">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
+        <!--footer part ending-->
+        <!-- link login_passeye.js file for password eye option script-->
+        <script src="/login_passeye.js"></script>  
+      
+    </body>
+
+</html>

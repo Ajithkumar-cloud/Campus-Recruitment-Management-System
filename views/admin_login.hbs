@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        
+        <link rel="stylesheet" type="text/css" href="/css/admin_login.css"> <!-- admin login css link-->
+        <link rel="stylesheet" type="text/css" href="/css/footer.css"> <!-- footer css link-->
+        <link rel="stylesheet" type="text/css" href="/css/navbar.css"> <!-- navbar css link-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  
+         <!-- font-ajax -->
+
+    </head>
+    <body style="background-color: rgba(226, 232, 232, 0.753);">
+        <!-- nav bar starting -->
+        
+        {{> navbar }}
+        <!-- nav bar ending with campus picture-->
+
+        <!-- placement login page starting-->
+        <div class="top">
+            <div class="heading">
+                <h2>PLACEMENT LOGIN</h2>
+                {{#if msg}}
+                <span class="{{msg_type}}">{{msg}}</span>
+                {{/if}}
+            </div>
+            <div class="mid-form">
+                <form action="/auth/admin_login" method="post">
+
+                    <label class="regtext">Enter Your Id: *</label>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <input type="text" name="admin_regno" > 
+                        
+                    </div>
+                     <div class="ey-icon">
+                          <label class="passtext">Password: *</label>
+                          <i id="access" class="fa-solid fa-eye-slash" ></i>
+                     </div>
+                      <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" name="password" id="password"> 
+                      </div>
+
+                    <div class="field-button">
+                        <button type="submit">LOGIN</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- placement login page ending -->
+
+
+        <!-- footer page starting -->
+        <footer class="foot">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4 >Navigation</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="">Student Login</a></li>
+                                <li><a href="">Placement Login</a></li>
+                                <li><a href="">Hod Login</a></li>    
+                            </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>More</h4>
+                            <ul>
+                                <li><a href="">Placement Details</a></li>
+                                <li><a href="">Recruiters</a></li>
+                                <li><a href="">Training Details</a></li>
+                                <li><a href="">Contact Us</a></li>
+
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get In Touch</h4>
+                            <ul>
+                                <li>Sethu Institute of Technology</li>
+                                <li>Kariapatti</li>
+                                <li>Contact</li>   
+                                <li>0452-101001</li> 
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
+                            <div class="social">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
+
+
+        <!-- footer page ending -->
+          <script src="/admin_passeye.js"></script>
+    </body>
+
+</html>

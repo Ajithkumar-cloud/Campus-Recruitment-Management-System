@@ -1,0 +1,280 @@
+body .top-notch{   
+    box-sizing: border-box;
+    font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    max-width: 1200px;
+    height: 700px;
+    padding: 30px;
+    margin: 110px auto;
+    border-radius: 2px;
+     
+}       
+.top-notch header{
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;   
+    margin-left: 17px;
+    font-family: sans-serif;
+}
+/*  heading below border
+.top-notch header::before{
+    content: "";
+    position: absolute  ;
+    left: 0;
+    bottom: -3px;
+    height: 3px;
+    width: 225px;
+    background-color: rgb(93, 93, 244);
+}*/
+.top-notch form{
+    position: relative;
+    min-height: 600px;
+    margin-top: 45px; 
+    width: auto;  
+    overflow: hidden;
+}
+.top-notch form .form{
+    position: absolute;
+    transition: all 0.3 ease;
+}
+.top-notch form .form.second{  /* by default showing first form to set opacity = 0*/
+    opacity: 0;    
+    pointer-events: none; 
+    transform: translateX(100%);
+}
+.top-notch form .form.first{
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0%);
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+/* when click back button class backActive will be declared*/
+/* form.backActive .form.first{
+    opacity: 1;
+    pointer-events: none;
+    transform: translateX(0%);
+} */
+
+/*
+.top-notch form .details{
+    margin-top: 20px;
+}
+.top-notch form .title{
+    font-size: 1;
+}
+*/
+
+.top-notch form .fields{
+    margin: 5px 20px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+     
+  display: flex;
+  width: calc(80% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+  margin-bottom: 35px;
+}
+.input-field input{
+    outline: none;
+    padding: 0 10px;
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    color: #333;
+    height: 35px;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+  
+}
+form .fields .radio-field{
+    display: flex;
+    flex-direction: row;  
+    width:calc(80% / 3 - 15px);
+    margin-top: 0px;
+}
+.radio-field input label{
+    font-family: sans-serif;
+    font-size: 17px;
+
+}
+.radio-field  label{
+    font-family: sans-serif;
+    font-size: 17px;
+}
+.radio-field input{
+
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+form .fields .select-field{
+  display: flex;
+  flex-direction: column;
+  width: calc(80% / 3 - 15px);
+  margin: 4px 0;
+  margin-top: -25px;
+
+}
+.select-field label{
+     
+    margin-top: -3px;
+    margin-bottom: 2px;
+    font-size: 17px;  
+}
+.select-field select{
+    padding: 0 10px;
+    font-size: 14px;
+    font-family: sans-serif;
+    height: 35px;
+    border-radius: 2px;
+    color: #707070;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    border: 1px solid #aaa;
+}
+.input-field label{
+    font-size: 17px;
+    font-family: sans-serif;
+}
+.input-field input:is(:focus){
+  /* box-shadow: 0 3px 6px rgba(0,0,0,13); */
+   border-color: royalblue;
+}
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color:#333;
+}
+.select-field select:is(:focus){
+     border-color: royalblue;
+  }
+.select-field select:hover{
+    color: #333;
+ }
+ .butttons input[type="submit"]{
+    font-size: 17px;
+    height: 45px;
+    width: 190px;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(12, 21, 123);
+    cursor: pointer;
+ }
+ form .fields .address-field {
+ display: flex;
+ width: calc(80% / 3 - 15px);
+ flex-direction: column;
+ margin: 4px 0;
+ margin-top: 10px;
+ }
+ .address-field textarea{
+    color: #333;
+    font-size: 14px;
+    font-family: sans-serif;
+    resize: none;
+    border-radius: 2px;
+    border: 1px solid #aaa; 
+ }
+ .address-field label{ 
+   font-family: sans-serif;
+   font-size: 17px;
+   margin-top: -23px;
+   margin-bottom: 4px;
+
+ }
+.top-notch form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 190px;
+    border: none;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    background-color: rgb(12, 21, 123);
+    margin: 25px 0 25px 0;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 17px;
+    margin-left: 20px;
+
+}
+.top-notch form .backBtn .btntext{
+    text-align: center;
+}
+form button:hover{
+    background-color: rgb(0, 0, 127);
+}
+form button i{
+    margin: 0 6px;
+        
+}
+form .backBtn i{
+    transform: rotate(180deg);
+    margin-left: -10px;
+ 
+}
+form .butttons{
+ display: flex;
+ align-items: center;
+ margin-top: 20px;
+}
+form .butttons .backBtn{
+   margin-right: 30px;
+}
+#access,#access1{
+    position: absolute;
+    color: royalblue;
+    margin-left: 255px;
+    padding: 0px 1px 0px 1px;
+    cursor: pointer;
+}
+.top-notch.msgbox{
+  background-color: aqua;
+}
+.error{
+    color:red;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+.good{
+    color:royalblue;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+/* email-error design*/
+form .form .input-field #email-error{
+    color: red;
+    font-size: 17px;
+    font-family: sans-serif;
+    margin-left: 3px;
+}
+form .form .input-field #phone-error{
+    color: red;
+    font-size: 17px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Campus Recruitment</title>
+
+        <!-- Favicon linking code-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+
+        <!----------------------ADMIN CSS LINKING ONLY NAVBAR DESIGN ------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_sidedash.css">
+
+        <!----------------------CSS LINKING CODE------------------->
+        <link rel="stylesheet" type="text/css" href="/css/admin_viewplacedstudents.css">
+
+        <!-- ICONS link-->
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script>  <!--font link-->
+
+
+    </head>
+    <body>
+        <!--====================Side Nav bar starting======================-->
+        {{> admin_navbar}}
+        <!--===========Nav bar ending ===========-->
+
+    <!--setup navigation bar start-->
+
+        <section class="dashboard">
+            <div class="top">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="setupbar">
+                <div class="thingsbar">
+                    <div class="set-link">
+                        <i class="fa-brands fa-windows"></i>
+                        <a class="navtext" href=""><span>Back to Home</span></a>
+                    </div>
+                    <div class="set-link">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <a class="navtext"href="/auth/admin_logout"><span>Logout</span></a>
+                    </div>
+                    <div class="user-img">
+                        <span class="userimg-design">
+                            <i class="fa-solid fa-user"></i>
+                        </span>   
+                            
+                    </div>
+                </div>
+            </div>
+
+            <!--setup navigation bar end-->
+
+            <!--  starting heading name-->
+            <div class="manage">
+                <div class="title">
+                    <i class="fa-solid fa-address-book"></i>
+                    <span class="text">View Placed Students</span>
+                </div>
+            </div>  
+            <!-- heading name end-->
+
+            <div class="form-top">
+                <div class="form-mid">
+                    <form method="POST" action="/auth/admin_viewplacedstudents">
+
+                        <div class="select-field">
+                            <span class="s-text">Select Company</span>
+                            <select name="company" id="company-field">
+                                <option value="0">All Company</option>
+                                {{#each companylist}}
+                                <option value="{{this.SNO}}">{{this.COMPANY_NAME}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="select-field">
+                            <span class="s-text">Select Department</span>
+                            <select name="dep" id="default">
+                                <option value="0">All Departments</option>
+                                <option name="CSE"value="1">CSE</option>
+                                <option name="ECE"value="3">ECE</option>
+                                <option name="IT" value="2">IT</option>
+                                <option name="BIO"value="4">BIO</option>
+                                <option name="MECH"value="5">MECH</option>
+                                <option name="CIVIL"value="6">CIVIL</option>
+                            </select>
+                        </div>
+
+                        <div class="button-field">
+                            <input type="submit" value="View">
+                        </div> 
+
+                    </form>
+
+                </div>
+                
+            </div>
+            <!-- table student list-->
+            <div class="table-container">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>REGNO</th>
+                                <th>NAME</th>
+                                <th>EMAIL</th>
+                                <th>COMPANY</th>
+                                <th>SALARY</th>
+                                <th>DEPARTMENT</th>
+                                <th>DELETE</th>     
+                            </tr>        
+                        </thead>
+                        <tody>  
+                            {{#each list}}             
+                            <tr>
+                                <td>{{this.REGNO}}</td>
+                                <td>{{this.NAME}}</td>
+                                <td>{{this.EMAIL}}</td>
+                                <td>{{this.COMPANY_NAME}}</td>
+                                <td>{{this.SALARY}}</td>
+                                <td>{{compare this.DEPARTMENT}}</td>
+                                <td><a onclick="return confirm('Are You Sure?')" class="delete" href="/auth/delete/admin_viewplacedstudents/{{this.PLACED_ID}}/{{this.REGNO}}"><i class="fa-regular fa-trash-can"></i></a></td>
+                            </tr>
+                            {{/each}}          
+                        </tody>       
+                    </table>
+
+                </div>
+            </div>
+            
+
+
+
+        </section>
+    </body>
+    <script src="/darkmode.js"></script>
+    <script>
+        document.getElementById("default").value = "{{department}}";
+        document.getElementById("company-field").value = "{{company}}";
+    </script>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Campus Recruitment</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" >
+        <link rel="stylesheet" type="text/css" href="/css/signup.css"> 
+        <link rel="stylesheet" type="text/css" href="/css/footer.css"> <!--footer css link-->
+        <link rel="stylesheet" type="text/css" href="/css/navbar.css"> <!-- navbar css link-->
+        <link rel="icon" type="image/x-icon" href="/css/logo/favicon.ico">
+        <script src="https://kit.fontawesome.com/ccbd25d9fc.js" crossorigin="anonymous"></script> 
+    </head> 
+    <body style="background-color: rgba(226, 232, 232, 0.753);">
+        <!--  Navbar starting code  -->
+        {{> navbar }}
+        <!-- nav bar ending with campus picture-->
+          
+        <!-- signup page starting code-->
+        <div class="top-notch"> 
+           <header>Create Your Campus Account
+             <span class="msgbox">
+                {{#if msg}}
+                 <p class="{{msg_type}}">{{msg}}</p>
+                {{/if}}
+              </span>
+              </header>
+           <form action="/auth/signup" method="post">
+                <div class="form first">
+                    <div class="details Personal">
+                        
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Full Name: *</label>
+                                <input type="text" name="fullname" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Regno: *</label>
+                                <input type="text" name="regno"placeholder="Enter your Regno"  required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Email: *</label>
+                                <input type="email"  name="email"  placeholder="Enter your email" id="email-field" spellcheck="false" onkeydown="validateEmail()" required>
+                                <span id="email-error"></span>
+                            </div>
+                                    
+                            <div class="input-field">
+                                <label>Phone Number: *</label>
+                                <input type="text" name="phone" placeholder="Enter phone number" required>
+        
+                            </div>
+
+                            <div class="input-field">
+                        
+                                <label>Password: *</label> 
+                                <input type="password" name="password" id="password" placeholder="Enter your password"  required>
+                                <i id="access"class="fa-solid fa-eye-slash"></i>
+                               
+                            </div>
+
+                            <div class="input-field">
+                              
+                                <label>Confirm Password: *</label>
+                                <input type="password" name="confirm_password" id="pass1" placeholder="Enter confirm password"required>
+                                <i id="access1"class="fa-solid fa-eye-slash"></i>
+                            </div>
+
+                            <div class="radio-field">
+                                <label>Gender: *</label>
+                                <input type="radio" name="gender" value="male" required><label>Male</label>
+                                <input type="radio" name="gender" value="female" ><label>Female</label>                             
+                            </div>
+                            <div class="input-field">
+                                <label>Date of Birth: *</label> 
+                                <input type="date" name="date" required>
+                            
+                            </div>
+
+                            <div class="select-field">
+                                <label>Select Your Department:*</label>
+                                <select name="department" required>
+                                    <option selected disabled hidden><label>Choose your dep</label></option>
+                                    <option name="CSE"value="1"><label>CSE</label></option>
+                                    <option name="ECE"value="3"><label>ECE</label></option>
+                                    <option name="IT"value="2"><label>IT</label></option>
+                                    <option name="BIO"value="4"><label>BIO</label></option>
+                                    <option name="MECH"value="5"><label>MECH</label></option>  
+                                    <option name="CIVIL"value="6"><label>CIVIL</label></option>      
+                                </select>
+                            </div>  
+
+                        </div>
+                        <button type="button" class="nextBtn">
+                            <span class="btnText">Next</span>
+                            <i class="fa-solid fa-caret-right"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <div class="form second">
+                    <div class="details address">
+                        
+                        <div class="fields">
+                            <div class="input-field">
+                                <label>Father Name: *</label>
+                                <input type="text" name="fathername" placeholder="Enter father name" required >
+                            </div>
+
+                            <div class="input-field">
+                                <label>Mother Name: *</label>
+                                <input type="text" name="mothername"placeholder="Enter mother name" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Father/Mother Number: *</label>
+                                <input type="text"  name="fmnumber" placeholder="Enter father/mother number" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>10TH Percentage: *</label>
+                                <input type="text" name="ten" placeholder="Enter 10th mark percentage" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>12TH Percentage: *</label>
+                                <input type="text" name="twel" placeholder="Enter 12th mark percentage" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>Current CGPA: *</label>
+                                <input type="text" name="cgpa" placeholder="Enter current CGPA" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>No of Standing Arrears: *</label>
+                                <input type="number" name="standing" placeholder="Enter number of standing arrears" required>
+                            </div>
+
+                            <div class="input-field">
+                                <label>History of Arrears: *</label> 
+                                <input type="number" name="history" placeholder="Enter history of arrears" required >
+                            
+                            </div>
+
+                            <div class="address-field">
+                                <label>Address: *</label>
+                                <textarea name="textarea" rows="3" required></textarea>
+                            </div>
+
+                        </div>
+                        <div class="butttons">
+                                <button class="backBtn" type="button">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <span class="btnText">Back</span>
+                              
+                                </button>
+                               <input type="submit" value="Register">
+                        </div>
+
+                    </div>
+                </div>
+
+           </form>
+        </div>
+        <!-- signup page ending -->
+
+        <!-- Footer part starting another footer css linked-->
+        <footer class="foot">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4 >Navigation</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="">Student Login</a></li>
+                                <li><a href="">Placement Login</a></li>
+                                <li><a href="">Hod Login</a></li>    
+                            </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>More</h4>
+                            <ul>
+                                <li><a href="">Placement Details</a></li>
+                                <li><a href="">Recruiters</a></li>
+                                <li><a href="">Training Details</a></li>
+                                <li><a href="">Contact Us</a></li>
+
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get In Touch</h4>
+                            <ul>
+                                <li>Sethu Institute of Technology</li>
+                                <li>Kariapatti</li>
+                                <li>Contact</li>   
+                                <li>0452-101001</li> 
+                            </ul>
+
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
+                            <div class="social">
+                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+       
+        </footer>
+
+        <!-- signup script linking file-->
+        <script src="/signup_script.js"></script>
+        <script src="/signup_passeye.js"></script>
+
+    </body>   
+
+    <script>
+
+        var emailField = document.getElementById("email-field");
+        var emailError = document.getElementById("email-error");
+
+        function validateEmail(){
+
+            if(!emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+                
+                emailError.innerHTML="Please enter a valid email";
+                emailField.style.borderColor = "red";
+                return false;
+            }
+            emailError.innerHTML="";
+            emailField.style.borderColor = "#aaa";
+            return true;
+
+        }
+
+
+    </script>
+
+</html>
