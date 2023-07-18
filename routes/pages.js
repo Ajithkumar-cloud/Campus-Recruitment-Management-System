@@ -123,35 +123,35 @@ router.get("/coordinator_viewplacedstudents",userController.coordinator_ViewPlac
 //student viewplaced students render
 router.get("/student_viewplacedstudents",userController.isLoggedIn,userController.student_ViewPlacedStudents);
 
-router.get("/offcampus",async(req,res)=>{
+// router.get("/offcampus",async(req,res)=>{
 
-    const options = {
-        method: 'POST',
-        url: 'https://linkedin-jobs-search.p.rapidapi.com/',
-        headers: {
-          'content-type': 'application/json',
-          'X-RapidAPI-Key': '314a6684b9mshd7e56582410081bp1049c8jsn8312a38b4230',
-          'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
-        },
-        data: {
-          search_terms: 'python programmer',
-          location: 'Chicago, IL',
-          page: '1'
-        }
-    };
-                //my rapid key '314a6684b9mshd7e56582410081bp1049c8jsn8312a38b4230'
-                //nithis rapid key 29716e7ef6msh1b72b8d74762ee3p1cae99jsnc9896aed6b7e
-    let ans;
-    try {
-        const response = await axios.request(options);
-        ans = response.data;
-    } catch (error) {
-        console.error(error);
-    }
-    console.log(ans);
+//     const options = {
+//         method: 'POST',
+//         url: 'https://linkedin-jobs-search.p.rapidapi.com/',
+//         headers: {
+//           'content-type': 'application/json',
+//           'X-RapidAPI-Key': '314a6684b9mshd7e56582410081bp1049c8jsn8312a38b4230',
+//           'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
+//         },
+//         data: {
+//           search_terms: 'python programmer',
+//           location: 'Chicago, IL',
+//           page: '1'
+//         }
+//     };
+//                 //my rapid key '314a6684b9mshd7e56582410081bp1049c8jsn8312a38b4230'
+//                 //nithis rapid key 29716e7ef6msh1b72b8d74762ee3p1cae99jsnc9896aed6b7e
+//     let ans;
+//     try {
+//         const response = await axios.request(options);
+//         ans = response.data;
+//     } catch (error) {
+//         console.error(error);
+//     }
+//     console.log(ans);
 
-    res.render("offcampus",{data : ans});
-});
+//     res.render("offcampus",{data : ans});
+// });
 
 
 
