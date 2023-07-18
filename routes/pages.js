@@ -130,7 +130,7 @@ router.get("/student_viewplacedstudents",userController.isLoggedIn,userControlle
 //         url: 'https://linkedin-jobs-search.p.rapidapi.com/',
 //         headers: {
 //           'content-type': 'application/json',
-//           'X-RapidAPI-Key': '314a6684b9mshd7e56582410081bp1049c8jsn8312a38b4230',
+//           'X-RapidAPI-Key': '',
 //           'X-RapidAPI-Host': 'linkedin-jobs-search.p.rapidapi.com'
 //         },
 //         data: {
@@ -139,8 +139,6 @@ router.get("/student_viewplacedstudents",userController.isLoggedIn,userControlle
 //           page: '1'
 //         }
 //     };
-//                 //my rapid key '314a6684b9mshd7e56582410081bp1049c8jsn8312a38b4230'
-//                 //nithis rapid key 29716e7ef6msh1b72b8d74762ee3p1cae99jsnc9896aed6b7e
 //     let ans;
 //     try {
 //         const response = await axios.request(options);
